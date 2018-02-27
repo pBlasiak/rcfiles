@@ -1,0 +1,163 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[5]
+
+%\usepackage[english]{babel}
+%\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+%
+\usepackage{threeparttable}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{setspace}
+%% potrzebne do tabeli jak w przykładzie
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+%
+\usepackage{epstopdf}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\restylefloat{table}
+%%\usepackage{multirow}
+\usepackage{booktabs}
+%\usepackage{authblk}
+\usepackage[bottom]{footmisc}
+%\usepackage[figurename=Fig.]{caption}
+\usepackage[section]{placeins}
+\usepackage{color, soul} % highlighting
+\newcolumntype{Y}{>{\centering\arraybackslash}X} %necessary for tabularx to make equal width columns
+\usepackage[usenames,dvipsnames]{xcolor} 
+\usepackage[draft]{todonotes}   % notes showed; should be after xcolor
+
+%\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+
+
+\journal{Applied Energy}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{...}
+ 
+ \author[pwr]{first}
+ 
+ \author[pwr]{second}
+   
+ \author[pwr]{S\l awomir Pietrowicz\corref{cor1}}
+ \ead{slawomir.pietrowicz@pwr.edu.pl}
+ 
+ \cortext[cor1]{Corresponding author Tel.: +48 71 320 36 17}
+ 
+ \address[pwr]{Department of Thermodynamics, Theory of Machines and Thermal Systems, Faculty of Mechanical and Power Engineering, Wroc\l aw University of Technology, Wroc\l aw Wybrze\.ze Wyspia\'nskiego 27, Poland}
+
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{keyword}
+Oscillating Heat Pipe \sep  \sep  \sep 
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\section*{Nomenclature}
+
+\begin{tabular}{l c p{10.5cm}}
+
+  $A_c$ & -- & cross-sectional area of the tube, $\mathrm{m^2}$ \\
+       
+\end{tabular} 
+\\ 
+
+\textit{ Greek symbols}
+
+\begin{tabular}{l c p{10.5cm}}
+
+  $\rho$ & -- & density, $\mathrm{kg/m^3}$ \\ 
+       
+\end{tabular} 
+\\ 
+%\textit{ Superscripts}
+
+\textit{ Subscripts}
+
+\begin{tabular}{l c p{10.5cm}}
+ 
+  $l$ & -- & liquid \\
+  $v$ & -- & vapor \\
+  $h$ & -- & heating \\
+  $c$ & -- & condensing section \\
+  $e$ & -- & evaporation section \\
+       
+\end{tabular} 
+\\
+
+\textit{Abbreviations}
+
+\begin{tabular}{l c p{10.5cm}}
+
+  $PHP$ & -- & Pulsating Heat Pipe \\  
+       
+\end{tabular} 
+
+\section{Introduction}
+\label{sec:intro}
+
+\section{Experimental setup}
+\subsection{Preparation}
+\subsection{Podzespoły}
+\subsection{Dokładność}
+\section{Results and discussion}
+\label{sec:resdis}
+\section{Conclusions}
+\section*{Acknowledgements}
+The work was financed by Grant No.POiR.04.01.04-00-0037/15. Calculations have been carried out using resources provided by Wroclaw Centre for Networking and Supercomputing (http://wcss.pl).
+
+\section*{References} 
+
+\bibliography{PHP}
+
+\end{document}
