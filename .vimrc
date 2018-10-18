@@ -49,7 +49,6 @@ filetype off                  " required
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 
-let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
    
    syntax on
    filetype plugin indent on
@@ -99,6 +98,7 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew .<CR> 
 map  <F2> :NERDTreeToggle<CR>
+map  <F6> :w<CR> <leader>ll <leader>ls
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
 nmap <F8> :TagbarToggle<CR>    
 map <leader>s :source ~/.vimrc<CR>
@@ -153,7 +153,6 @@ nmap <LocalLeader>nn :NERDTreeToggle<cr>
 
 " ********** SETTINGS FOR YouCompleteMeE **********
 let g:ycm_confirm_extra_conf = 0
-"let g:ycm_global_ycm_extra_conf = '.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
@@ -174,3 +173,4 @@ if &diff
 	syntax off
 endif
  
+
