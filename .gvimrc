@@ -73,7 +73,7 @@ set hlsearch
 set path+=.
 set nocp
 set number
-set gfn=Ubuntu\ Mono\ 12
+set gfn=Ubuntu\ Mono\ 13
 set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 "set nowrap
