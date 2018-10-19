@@ -56,6 +56,8 @@ filetype off                  " required
 " ********** TAGS **********
 "set tags=./tags;/,tags;,~/OpenFOAM/przemek-v1612+/tags;/
 set tags=./tags,tags,/home/przemek/OpenFOAM/przemek-v1612+/tags
+"set tags=./tags;,tags;
+
 
 " ********** BASIC SETTINGS **********
 set mouse=a
@@ -102,6 +104,9 @@ map  <F6> :w<CR> <leader>ll <leader>ls
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
 nmap <F8> :TagbarToggle<CR>    
 map <leader>s :source ~/.vimrc<CR>
+nnoremap <leader>d :YcmCompleter GoTo<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 " ********** SETTINGS FOR LATEX-SUITE **********
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -155,6 +160,7 @@ nmap <LocalLeader>nn :NERDTreeToggle<cr>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_complete_in_comments = 1
 "let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
 "button does not work
 
