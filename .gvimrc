@@ -83,6 +83,8 @@ set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 "set nowrap
 set smartindent
+set splitbelow
+set splitright
 
 " "highlights column to see how many space left
 "set colorcolumn=110
@@ -99,8 +101,12 @@ set smartindent
 
 
 " ********** MAPPINGS **********
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+"map  <C-l> :tabn<CR>
+"map  <C-h> :tabp<CR>
 map  <C-n> :tabnew .<CR> 
 map  <F2> :NERDTreeToggle<CR>
 map  <F6> :w<CR> <leader>ll <leader>ls
