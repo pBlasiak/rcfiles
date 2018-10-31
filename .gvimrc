@@ -7,7 +7,7 @@ filetype off                  " required
  call vundle#begin()
 
  Plugin 'VundleVim/Vundle.vim'
- Plugin 'mileszs/ack.vim'
+ "Plugin 'mileszs/ack.vim'
  Plugin 'The-NERD-tree'
  Plugin 'nerdtree-ack'
  Plugin 'tpope/vim-fugitive'
@@ -31,6 +31,8 @@ filetype off                  " required
  "Plugin 'tpope/vim-commentary'
  "Plugin 'Townk/vim-autoclose' " it turns out latex-suite
  Plugin 'chrisbra/improvedft'
+ "Plugin 'spolu/dwm.vim'
+" Plugin 'zhaocai/GoldenView.Vim'
 " Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
 
@@ -83,8 +85,8 @@ set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 "set nowrap
 set smartindent
-set splitbelow
-set splitright
+"set splitbelow
+"set splitright
 
 " "highlights column to see how many space left
 "set colorcolumn=110
@@ -101,18 +103,27 @@ set splitright
 
 
 " ********** MAPPINGS **********
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 "map  <C-l> :tabn<CR>
 "map  <C-h> :tabp<CR>
-map  <C-n> :tabnew .<CR> 
+"map  <C-n> :tabnew .<CR> 
+"" 1. split to tiled windows
+" nmap <silent> <C-L>  <Plug>GoldenViewSplit
+"" 2. quickly switch current window with the main pane
+"" and toggle back
+" nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+" nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+"" 3. jump to next and previous window
+" nmap <silent> <C-N>  <Plug>GoldenViewNext
+" nmap <silent> <C-P>  <Plug>GoldenViewPrevious
 map  <F2> :NERDTreeToggle<CR>
 map  <F6> :w<CR> <leader>ll <leader>ls
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
-nmap <F8> :TagbarToggle<CR>    
-map <leader>s :source ~/.gvimrc<CR>
+nmap <F7> :TagbarToggle<CR>    
+map <leader>s :source ~/.vimrc<CR>
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
@@ -150,8 +161,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 " ********** SETTINGS FOR BUFFERS EXPLORER **********
  nnoremap <silent> <F3> :BufExplorer<CR>
- nnoremap <silent> <F12> :bn<CR>
- nnoremap <silent> <S-F12> :bp<CR>
+ nnoremap <silent> <F4> :bn<CR>
+ nnoremap <silent> <S-F4> :bp<CR>
 
 
 " ********** SETTINGS FOR NERDTree **********
@@ -163,6 +174,11 @@ nmap <LocalLeader>nn :NERDTreeToggle<cr>
 
 " ********** SETTINGS FOR VIM-AIRLINE **********
 "let g:airline#extensions#tabline#formatter = 'unique-tail_improved'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+"
+" " Show just the filename
+ let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " ********** SETTINGS FOR YouCompleteMeE **********
