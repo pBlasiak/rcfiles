@@ -3,6 +3,7 @@ filetype off                  " required
 
 " ********** VUNDLE BEGIN **********
  set rtp+=~/.vim/bundle/Vundle.vim
+ set rtp+=~/.fzf
  call vundle#begin()
 
  Plugin 'VundleVim/Vundle.vim'
@@ -15,8 +16,10 @@ filetype off                  " required
  Plugin 'vim-airline/vim-airline'
  Plugin 'vim-airline/vim-airline-themes'
  "Plugin 'easymotion/vim-easymotion'
- Plugin 'kien/ctrlp.vim'
  Plugin 'micha/vim-colors-solarized'
+ "Plugin 'kien/ctrlp.vim'
+ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plugin 'junegunn/fzf.vim'
  Plugin 'jlanzarotta/bufexplorer'
  Plugin 'majutsushi/tagbar'
  Plugin 'gerw/vim-latex-suite'
