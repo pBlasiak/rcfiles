@@ -8,8 +8,8 @@ filetype off                  " required
 
  Plugin 'VundleVim/Vundle.vim'
  "Plugin 'mileszs/ack.vim'
- Plugin 'The-NERD-tree'
- Plugin 'nerdtree-ack'
+ "Plugin 'The-NERD-tree'
+ "Plugin 'nerdtree-ack'
  Plugin 'tpope/vim-fugitive'
  Plugin 'vim-scripts/a.vim'
  Plugin 'qpkorr/vim-bufkill'
@@ -32,7 +32,7 @@ filetype off                  " required
  "Plugin 'Townk/vim-autoclose' " it turns out latex-suite
  Plugin 'chrisbra/improvedft'
  "Plugin 'spolu/dwm.vim'
-" Plugin 'zhaocai/GoldenView.Vim'
+ Plugin 'zhaocai/GoldenView.Vim'
 " Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
 
@@ -60,7 +60,7 @@ filetype off                  " required
 
 " ********** TAGS **********
 "set tags=./tags;/,tags;,~/OpenFOAM/przemek-v1612+/tags;/
-set tags=./tags,tags,/home/przemek/OpenFOAM/przemek-v1612+/tags
+set tags=./tags;,tags;./.tags;,.tags;,/home/przemek/OpenFOAM/przemek-v1612+/.tags
 "set tags=./tags;,tags;
 
 
@@ -107,26 +107,48 @@ set smartindent
 "nnoremap <C-K> <C-W><C-K>
 "nnoremap <C-L> <C-W><C-L>
 "nnoremap <C-H> <C-W><C-H>
-"map  <C-l> :tabn<CR>
-"map  <C-h> :tabp<CR>
 "map  <C-n> :tabnew .<CR> 
-"" 1. split to tiled windows
-" nmap <silent> <C-L>  <Plug>GoldenViewSplit
-"" 2. quickly switch current window with the main pane
-"" and toggle back
-" nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-" nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-"" 3. jump to next and previous window
-" nmap <silent> <C-N>  <Plug>GoldenViewNext
-" nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-map  <F2> :NERDTreeToggle<CR>
-map  <F6> :w<CR> <leader>ll <leader>ls
+map  <C-k> :bn<CR>
+map  <C-h> :bprevious<CR>
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
-nmap <F7> :TagbarToggle<CR>    
 map <leader>s :source ~/.vimrc<CR>
+map <leader>e :Ex.<CR>
+
+" ********** MAPPINGS FOR GOLDEN-VIEW **********
+" 1. split to tiled windows
+ nmap <silent> <C-L>  <Plug>GoldenViewSplit
+" 2. quickly switch current window with the main pane
+" and toggle back
+ nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+ nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+" 3. jump to next and previous window
+ nmap <silent> <C-N>  <Plug>GoldenViewNext
+ nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+
+" ********** MAPPINGS FOR NERDTree **********
+"map  <F2> :NERDTreeToggle<CR>
+
+" ********** MAPPINGS FOR NETRW **********
+map  <F2> :e.<CR>
+
+" ********** MAPPINGS FOR LATEX-SUITE **********
+map  <F6> :w<CR> <leader>ll <leader>ls
+
+" ********** MAPPINGS FOR TAGBAR **********
+nmap <F7> :TagbarToggle<CR>    
+
+" ********** MAPPINGS FOR YouCompleteMe **********
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+
+" ********** MAPPINGS FOR BUFFERS EXPLORER **********
+ nnoremap <silent> <F3> :BufExplorer<CR>
+" nnoremap <silent> <F4> :bn<CR>
+" nnoremap <silent> <S-F4> :bp<CR>
+
+
+" ********** SETTINGS FOR PLUGINS **********
 
 " ********** SETTINGS FOR LATEX-SUITE **********
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -146,23 +168,20 @@ let g:Tex_UseCiteCompletionVer2=0
 
 
 " ********** SETTINGS FOR CtrlP **********
-let g:ctrlp_working_path_mode = 'rw'
-"let g:ctrlp_working_path_mode = 'ra' 
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=1000
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_working_path_mode = 'rw'
+""let g:ctrlp_working_path_mode = 'ra' 
+"let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=1000
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 " ********** SETTINGS FOR BUFFERS EXPLORER **********
- nnoremap <silent> <F3> :BufExplorer<CR>
- nnoremap <silent> <F4> :bn<CR>
- nnoremap <silent> <S-F4> :bp<CR>
 
 
 " ********** SETTINGS FOR NERDTree **********
@@ -181,7 +200,7 @@ let g:airline#extensions#tabline#enabled = 1
  let g:airline#extensions#tabline#fnamemod = ':t'
 
 
-" ********** SETTINGS FOR YouCompleteMeE **********
+" ********** SETTINGS FOR YouCompleteMe **********
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -199,6 +218,21 @@ let g:ft_improved_multichars = 1
 
 " ********** SETTINGS FOR AUTOTAG **********
 "let g:autotagTagsFile="tags"
+
+" ********** SETTINGS FOR GOLDEN-VIEW **********
+let g:goldenview__enable_at_startup = 0
+"let g:goldenview__enable_default_mapping = 0
+
+" ********** SETTINGS FOR DWM.VIM **********
+let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_banner = 0
+"augroup ProjectDrawer
+"	autocmd!
+"	autocmd VimEnter * :Vexplore
+"augroup END
 
 if &diff
 	syntax off
