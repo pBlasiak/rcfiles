@@ -29,7 +29,7 @@ filetype off                  " required
  Plugin 'Valloric/YouCompleteMe'
  "Plugin 'rdnetto/YCM-Generator'
  "Plugin 'tpope/vim-commentary'
- "Plugin 'Townk/vim-autoclose' " it turns out latex-suite
+ "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
  Plugin 'chrisbra/improvedft'
  "Plugin 'spolu/dwm.vim'
  Plugin 'zhaocai/GoldenView.Vim'
@@ -85,6 +85,7 @@ set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 "set nowrap
 set smartindent
+set diffopt+=vertical
 "set splitbelow
 "set splitright
 
@@ -102,17 +103,21 @@ set smartindent
 "   set expandtab
 
 
-" ********** MAPPINGS **********
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
-"map  <C-n> :tabnew .<CR> 
-map  <C-k> :bn<CR>
-map  <C-h> :bprevious<CR>
+" ########## MAPPINGS ##########
+
+" ********* MAPPINGS FOR UPDATE TAGS ###########
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
+
+" ********* MAPPINGS FOR LOAD VIMRC ***********
 map <leader>s :source ~/.vimrc<CR>
-map <leader>e :Ex.<CR>
+
+" ********* MAPPINGS FOR VIMDIFF ***********
+map <leader>t :diffthis<CR>
+map <leader>o :diffoff<CR>
+map <leader>u :diffupdate<CR>
+map <leader>gl :diffget LO<CR>
+map <leader>gb :diffget BA<CR>
+map <leader>gr :diffget RE<CR>
 
 " ********** MAPPINGS FOR GOLDEN-VIEW **********
 " 1. split to tiled windows
@@ -130,6 +135,7 @@ map <leader>e :Ex.<CR>
 
 " ********** MAPPINGS FOR NETRW **********
 map  <F2> :e.<CR>
+map <leader>e :Ex.<CR>
 
 " ********** MAPPINGS FOR LATEX-SUITE **********
 map  <F6> :w<CR> <leader>ll <leader>ls
@@ -139,16 +145,17 @@ nmap <F7> :TagbarToggle<CR>
 
 " ********** MAPPINGS FOR YouCompleteMe **********
 nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 " ********** MAPPINGS FOR BUFFERS EXPLORER **********
- nnoremap <silent> <F3> :BufExplorer<CR>
-" nnoremap <silent> <F4> :bn<CR>
-" nnoremap <silent> <S-F4> :bp<CR>
+nnoremap <silent> <F3> :BufExplorer<CR>
+map  <C-k> :bn<CR>
+map  <C-h> :bprevious<CR>
 
 
-" ********** SETTINGS FOR PLUGINS **********
+
+" ########## SETTINGS FOR PLUGINS ##########
 
 " ********** SETTINGS FOR LATEX-SUITE **********
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -185,10 +192,10 @@ let g:Tex_UseCiteCompletionVer2=0
 
 
 " ********** SETTINGS FOR NERDTree **********
-let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
-let NERDTreeShowHidden=1
-"let g:NERDTreeChDirMode       = 2
-nmap <LocalLeader>nn :NERDTreeToggle<cr>
+"let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
+"let NERDTreeShowHidden=1
+""let g:NERDTreeChDirMode       = 2
+"nmap <LocalLeader>nn :NERDTreeToggle<cr>
 
 
 " ********** SETTINGS FOR VIM-AIRLINE **********
@@ -197,7 +204,7 @@ nmap <LocalLeader>nn :NERDTreeToggle<cr>
 let g:airline#extensions#tabline#enabled = 1
 "
 " " Show just the filename
- let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " ********** SETTINGS FOR YouCompleteMe **********
@@ -219,20 +226,43 @@ let g:ft_improved_multichars = 1
 " ********** SETTINGS FOR AUTOTAG **********
 "let g:autotagTagsFile="tags"
 
+
 " ********** SETTINGS FOR GOLDEN-VIEW **********
 let g:goldenview__enable_at_startup = 0
 "let g:goldenview__enable_default_mapping = 0
+let g:goldenview__ignore_urule={
+\   'filetype' : [
+\     ''        ,
+\     'qf'      , 'vimpager', 'undotree', 'tagbar',
+\     'nerdtree', 'vimshell', 'vimfiler', 'voom'  ,
+\     'tabman'  , 'unite'   , 'quickrun', 'Decho' ,
+\     'ControlP', 'diff'    , 'extradite'
+\   ],
+\   'buftype' : [
+\     'nofile'  , 'terminal'
+\   ],
+\   'bufname' : [
+\     'GoToFile'                  , 'diffpanel_\d\+'      , 
+\     '__Gundo_Preview__'         , '__Gundo__'           , 
+\     '\[LustyExplorer-Buffers\]' , '\-MiniBufExplorer\-' , 
+\     '_VOOM\d\+$'                , '__Urannotate_\d\+__' , 
+\     '__MRU_Files__' , 'FencView_\d\+$'
+\   ],
+\ }
 
-" ********** SETTINGS FOR DWM.VIM **********
+
+" ********** SETTINGS FOR NETRW **********
 let g:netrw_liststyle = 3
 "let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_banner = 0
+let g:netrw_use_errorwindow = 0
 "augroup ProjectDrawer
 "	autocmd!
 "	autocmd VimEnter * :Vexplore
 "augroup END
+
 
 if &diff
 	syntax off
