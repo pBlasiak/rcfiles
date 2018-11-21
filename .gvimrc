@@ -33,7 +33,7 @@ filetype off                  " required
  Plugin 'chrisbra/improvedft'
  "Plugin 'spolu/dwm.vim'
  Plugin 'zhaocai/GoldenView.Vim'
-" Plugin 'dahu/vim-fanfingtastic'
+ "Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
 
 " ********** VUNDLE END **********
@@ -106,6 +106,12 @@ endif
 
 
 " ########## MAPPINGS ##########
+
+" ********* MAPPINGS FOR WINDOWS ###########
+"nmap <silent> <C-L> :vs<CR>
+"nmap <silent> <C-M> :sp<CR>
+"nmap <silent> <C-N> <C-W><C-W>
+"nmap <silent> <C-P> <C-W><C-P>
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
