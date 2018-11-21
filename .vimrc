@@ -85,7 +85,9 @@ set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 "set nowrap
 set smartindent
-set diffopt+=vertical
+if &diff
+	set diffopt+=vertical
+endif
 "set splitbelow
 "set splitright
 
@@ -112,12 +114,15 @@ nmap ,t :!(cd %:p:h;ctags *.[ch])&
 map <leader>s :source ~/.vimrc<CR>
 
 " ********* MAPPINGS FOR VIMDIFF ***********
-map <leader>t :diffthis<CR>
-map <leader>o :diffoff<CR>
-map <leader>u :diffupdate<CR>
-map <leader>gl :diffget LO<CR>
-map <leader>gb :diffget BA<CR>
-map <leader>gr :diffget RE<CR>
+if &diff
+	syntax off
+	map <leader>t :diffthis<CR>
+	map <leader>o :diffoff<CR>
+	map <leader>u :diffupdate<CR>
+	map <leader>gl :diffget LO<CR>
+	map <leader>gb :diffget BA<CR>
+	map <leader>gr :diffget RE<CR>
+endif
 
 " ********** MAPPINGS FOR GOLDEN-VIEW **********
 " 1. split to tiled windows
@@ -194,7 +199,7 @@ let g:Tex_UseCiteCompletionVer2=0
 " ********** SETTINGS FOR NERDTree **********
 "let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
 "let NERDTreeShowHidden=1
-""let g:NERDTreeChDirMode       = 2
+"let g:NERDTreeChDirMode       = 2
 "nmap <LocalLeader>nn :NERDTreeToggle<cr>
 
 
@@ -258,14 +263,12 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_banner = 0
 let g:netrw_use_errorwindow = 0
+autocmd FileType netrw setl bufhidden=wipe
 "augroup ProjectDrawer
 "	autocmd!
 "	autocmd VimEnter * :Vexplore
 "augroup END
 
 
-if &diff
-	syntax off
-endif
  
 
