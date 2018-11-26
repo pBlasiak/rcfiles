@@ -149,7 +149,7 @@ map  <F2> :e.<CR>
 map <leader>e :Ex.<CR>
 
 " ********** MAPPINGS FOR LATEX-SUITE **********
-map  <F6> :w<CR> <leader>ll <leader>ls
+map  <F6> :wall<CR> <leader>ll <leader>ls
 
 " ********** MAPPINGS FOR TAGBAR **********
 nmap <F7> :TagbarToggle<CR>    
