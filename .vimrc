@@ -115,6 +115,7 @@ endif
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
+nnoremap <C-]> g<C-]>
 
 " ********* MAPPINGS FOR LOAD VIMRC ***********
 map <leader>s :source ~/.vimrc<CR>
