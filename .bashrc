@@ -96,7 +96,7 @@ alias qDebug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Deb
 
 alias of1606='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc'
 alias of1606Debug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Debug'
-alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
+# alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
 alias of1612Debug='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Debug'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -132,3 +132,4 @@ set-title(){
 alias of240='source $HOME/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=4'
 alias of220='source $HOME/OpenFOAM/OpenFOAM-2.2.0/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI'
 alias of301='source $HOME/OpenFOAM/OpenFOAM-3.0.1/etc/bashrc WM_LABEL_SIZE=64'
+alias of1612='source $HOME/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_LABEL_SIZE=64'
