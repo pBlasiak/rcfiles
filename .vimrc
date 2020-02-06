@@ -147,7 +147,10 @@ endif
 "map  <F2> :NERDTreeToggle<CR>
 
 " ********** MAPPINGS FOR NETRW **********
-map  <F2> :e.<CR>
+map  <F2> :Lexplore.<CR>
+nmap <leader>q :1wincmd c<CR>
+
+"map  <F2> :e.<CR>
 map <leader>e :Ex.<CR>
 
 " ********** MAPPINGS FOR LATEX-SUITE **********
@@ -282,6 +285,14 @@ autocmd FileType netrw setl bufhidden=wipe
 "	autocmd VimEnter * :Vexplore
 "augroup END
 
-
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 20
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
  
 

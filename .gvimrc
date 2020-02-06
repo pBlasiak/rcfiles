@@ -147,7 +147,10 @@ endif
 "map  <F2> :NERDTreeToggle<CR>
 
 " ********** MAPPINGS FOR NETRW **********
-map  <F2> :e.<CR>
+map  <F2> :Lexplore.<CR>
+nmap <leader>q :1wincmd c<CR>
+
+"map  <F2> :e.<CR>
 map <leader>e :Ex.<CR>
 
 " ********** MAPPINGS FOR LATEX-SUITE **********
