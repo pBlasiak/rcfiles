@@ -169,6 +169,8 @@ nnoremap <silent> <F3> :BufExplorer<CR>
 map  <C-k> :bn<CR>
 map  <C-h> :bprevious<CR>
 
+" ********** MAPPINGS FOR BUFKILL **********
+map <C-c> :BD<cr>
 
 
 " ########## SETTINGS FOR PLUGINS ##########
@@ -270,6 +272,10 @@ let g:goldenview__ignore_urule={
 \     '__MRU_Files__' , 'FencView_\d\+$'
 \   ],
 \ }
+
+
+" ********** SETTINGS FOR BUFKILL **********
+"let g:BufKillOverrideCtrlCaret
 
 
 " ********** SETTINGS FOR NETRW **********
