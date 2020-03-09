@@ -18,7 +18,8 @@ filetype off                  " required
  "Plugin 'easymotion/vim-easymotion'
  Plugin 'micha/vim-colors-solarized'
  "Plugin 'kien/ctrlp.vim'
- Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plugin 'junegunn/fzf', { 'do': './install --all' }
  Plugin 'junegunn/fzf.vim'
  Plugin 'jlanzarotta/bufexplorer'
  Plugin 'majutsushi/tagbar'
