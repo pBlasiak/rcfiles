@@ -28,7 +28,8 @@ filetype off                  " required
  Plugin 'octol/vim-cpp-enhanced-highlight'
  Plugin 'ap/vim-css-color'
  Plugin 'Valloric/YouCompleteMe'
- "Plugin 'rdnetto/YCM-Generator'
+" Plugin 'rdnetto/YCM-Generator'
+ Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
  "Plugin 'tpope/vim-commentary'
  "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
  Plugin 'chrisbra/improvedft'
@@ -173,6 +174,10 @@ map  <C-h> :bprevious<CR>
 " ********** MAPPINGS FOR BUFKILL **********
 map <C-c> :BD<cr>
 
+" ********** MAPPINGS FOR FZF **********
+nnoremap <C-j> :FZF ~<Cr>
+nnoremap <C-g> :Rg<Cr>
+
 
 " ########## SETTINGS FOR PLUGINS ##########
 
@@ -208,6 +213,7 @@ let g:Tex_UseCiteCompletionVer2=0
 
 
 " ********** SETTINGS FOR TAGBAR **********
+"let g:tagbar_ctags_bin = '/snap/bin/universal-ctags'
 let g:tagbar_ctags_bin = '/snap/bin/ctags'
 
 
