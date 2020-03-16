@@ -28,7 +28,6 @@ filetype off                  " required
  Plugin 'octol/vim-cpp-enhanced-highlight'
  Plugin 'ap/vim-css-color'
  Plugin 'Valloric/YouCompleteMe'
-" Plugin 'rdnetto/YCM-Generator'
  Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
  "Plugin 'tpope/vim-commentary'
  "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
@@ -134,7 +133,9 @@ if &diff
 	map <leader>gr :diffget RE<CR>
 endif
 
-" ********** MAPPINGS FOR GOLDEN-VIEW **********
+" ########## PLUGINS SETTINGS ##########
+
+" ********** GOLDEN-VIEW **********
 " 1. split to tiled windows
  nmap <silent> <C-L>  <Plug>GoldenViewSplit
 " 2. quickly switch current window with the main pane
@@ -145,133 +146,6 @@ endif
  nmap <silent> <C-N>  <Plug>GoldenViewNext
  nmap <silent> <C-P>  <Plug>GoldenViewPrevious
 
-" ********** MAPPINGS FOR NERDTree **********
-"map  <F2> :NERDTreeToggle<CR>
-
-" ********** MAPPINGS FOR NETRW **********
-map  <F2> :Lexplore.<CR>
-nmap <leader>q :1wincmd c<CR>
-
-"map  <F2> :e.<CR>
-map <leader>e :Ex.<CR>
-
-" ********** MAPPINGS FOR LATEX-SUITE **********
-map  <F6> :w<CR> <leader>ll <leader>ls
-
-" ********** MAPPINGS FOR TAGBAR **********
-nmap <F7> :TagbarToggle<CR>    
-
-" ********** MAPPINGS FOR YouCompleteMe **********
-nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-
-" ********** MAPPINGS FOR BUFFERS EXPLORER **********
-nnoremap <silent> <F3> :BufExplorer<CR>
-map  <C-k> :bn<CR>
-map  <C-h> :bprevious<CR>
-
-" ********** MAPPINGS FOR BUFKILL **********
-map <C-c> :BD<cr>
-
-" ********** MAPPINGS FOR FZF **********
-nnoremap <C-j> :FZF ~<Cr>
-nnoremap <C-g> :Rg<Cr>
-
-
-" ########## SETTINGS FOR PLUGINS ##########
-
-" ********** SETTINGS FOR LATEX-SUITE **********
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" " search in a singe file. This will confuse Latex-Suite. Set your grep
-" " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-"let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
-
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf = 'okular --unique'
-
-
-""let g:Tex_DefaultTargetFormat='dvi'
-"let g:Tex_DefaultTargetFormat='pdf'
-""let g:Tex_MultipleCompileFormats = 'pdf'
-""let g:Tex_MultipleCompileFormats = 'pdf, aux'
-"let g:Tex_GotoError=0
-"let g:Tex_UseCiteCompletionVer2=0
-""let g:Tex_ViewRule_dvi = 'xdvi'
-"let g:Tex_ViewRule_pdf='okular'
-"let g:Tex_CompileRule_pdf	'pdflatex -synctex=1 -interaction=nonstopmode $* '
-
-
-" ********** SETTINGS FOR CtrlP **********
-"let g:ctrlp_working_path_mode = 'rw'
-""let g:ctrlp_working_path_mode = 'ra' 
-"let g:ctrlp_max_files=0
-"let g:ctrlp_max_depth=1000
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-
-" ********** SETTINGS FOR TAGBAR **********
-"let g:tagbar_ctags_bin = '/snap/bin/universal-ctags'
-let g:tagbar_ctags_bin = '/snap/bin/ctags'
-
-
-" ********** SETTINGS FOR BUFFERS EXPLORER **********
-
-
-" ********** SETTINGS FOR NERDTree **********
-"let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
-"let NERDTreeShowHidden=1
-"let g:NERDTreeChDirMode       = 2
-"nmap <LocalLeader>nn :NERDTreeToggle<cr>
-
-
-" ********** SETTINGS FOR VIM-AIRLINE **********
-"let g:airline#extensions#tabline#formatter = 'unique-tail_improved'
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-"
-" " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-
-" ********** SETTINGS FOR YouCompleteMe **********
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1 
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-"let g:ycm_enable_diagnostic_signs = 0
-"let g:ycm_enable_diagnostic_highlighting = 0
-"let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
-"button does not work
-
-
-" ********** SETTINGS FOR IMPROVEDFT **********
-"let g:ft_improved_nohighlight = 1
-let g:ft_improved_consistent_comma = 1
-let g:ft_improved_multichars = 1
-"let g:ft_improved_ignorecase = 1
-
-
-" ********** SETTINGS FOR AUTOTAG **********
-"let g:autotagTagsFile="tags"
-
-
-" ********** SETTINGS FOR GOLDEN-VIEW **********
 let g:goldenview__enable_at_startup = 0
 "let g:goldenview__enable_default_mapping = 0
 let g:goldenview__ignore_urule={
@@ -295,11 +169,27 @@ let g:goldenview__ignore_urule={
 \ }
 
 
-" ********** SETTINGS FOR BUFKILL **********
-"let g:BufKillOverrideCtrlCaret
 
 
-" ********** SETTINGS FOR NETRW **********
+
+" ********** NERDTree **********
+"map  <F2> :NERDTreeToggle<CR>
+
+"let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
+"let NERDTreeShowHidden=1
+"let g:NERDTreeChDirMode       = 2
+"nmap <LocalLeader>nn :NERDTreeToggle<cr>
+
+
+
+
+" ********** NETRW **********
+map  <F2> :Lexplore.<CR>
+nmap <leader>q :1wincmd c<CR>
+
+"map  <F2> :e.<CR>
+map <leader>e :Ex.<CR>
+
 let g:netrw_liststyle = 3
 "let g:netrw_browse_split = 4
 let g:netrw_altv = 1
@@ -307,10 +197,132 @@ let g:netrw_winsize = 25
 let g:netrw_banner = 0
 let g:netrw_use_errorwindow = 0
 autocmd FileType netrw setl bufhidden=wipe
-"augroup ProjectDrawer
-"	autocmd!
-"	autocmd VimEnter * :Vexplore
-"augroup END
+
+
+
+
+" ********** LATEX-SUITE **********
+map  <F6> :w<CR> <leader>ll <leader>ls
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" " search in a singe file. This will confuse Latex-Suite. Set your grep
+" " program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" " The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+"let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
+
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf = 'okular --unique'
+
+
+
+
+" ********** TAGBAR **********
+nmap <F7> :TagbarToggle<CR>    
+
+let g:tagbar_ctags_bin = '/snap/bin/ctags'
+
+
+
+
+
+" ********** YouCompleteMe **********
+nnoremap <leader>d :YcmCompleter GoTo<CR>
+nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1 
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"let g:ycm_enable_diagnostic_signs = 0
+"let g:ycm_enable_diagnostic_highlighting = 0
+"let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
+"button does not work
+
+
+
+
+
+" ********** BUFFERS EXPLORER **********
+nnoremap <silent> <F3> :BufExplorer<CR>
+map  <C-k> :bn<CR>
+map  <C-h> :bprevious<CR>
+
+
+
+
+
+" ********** BUFKILL **********
+map <C-c> :BD<cr>
+
+
+
+
+" ********** FZF **********
+nnoremap <C-j> :FZF ~<Cr>
+nnoremap <C-g> :Rg<Cr>
+
+command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
+
+
+
+
+
+" ********** CtrlP **********
+"let g:ctrlp_working_path_mode = 'rw'
+""let g:ctrlp_working_path_mode = 'ra' 
+"let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=1000
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+
+
+
+
+" ********** VIM-AIRLINE **********
+"let g:airline#extensions#tabline#formatter = 'unique-tail_improved'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+"
+" " Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+
+
+" ********** IMPROVEDFT **********
+"let g:ft_improved_nohighlight = 1
+let g:ft_improved_consistent_comma = 1
+let g:ft_improved_multichars = 1
+"let g:ft_improved_ignorecase = 1
+
+
+
+
+
+" ********** AUTOTAG **********
+"let g:autotagTagsFile="tags"
+
+
+
+
+" ********** BUFKILL **********
+"let g:BufKillOverrideCtrlCaret
 
 
  
