@@ -66,7 +66,7 @@ set tags=./tags;,tags;./.tags;,.tags;,/home/przemek/OpenFOAM/przemek-v1612+/.tag
 
 
 " ********** BASIC SETTINGS **********
-set mouse=a
+set mouse-=a
 set hidden
 "set textwidth=80
 set autoread
