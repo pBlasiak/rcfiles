@@ -123,8 +123,8 @@ nnoremap <C-LeftMouse> g<C-]>
 map <leader>s :source ~/.vimrc<CR>
 
 " ********* MAPPINGS FOR READ ONLY FILE ***********
-map <leader>n :set nomodifiable
-map <leader>m :set modifiable
+map <leader>n :set nomodifiable<CR>
+map <leader>m :set modifiable<CR>
 
 
 " ********* MAPPINGS FOR VIMDIFF ***********
