@@ -122,6 +122,11 @@ nnoremap <C-LeftMouse> g<C-]>
 " ********* MAPPINGS FOR LOAD VIMRC ***********
 map <leader>s :source ~/.vimrc<CR>
 
+" ********* MAPPINGS FOR READ ONLY FILE ***********
+map <leader>n :set nomodifiable
+map <leader>m :set modifiable
+
+
 " ********* MAPPINGS FOR VIMDIFF ***********
 if &diff
 	syntax off
