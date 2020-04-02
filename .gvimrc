@@ -7,18 +7,15 @@ filetype off                  " required
  call vundle#begin()
 
  Plugin 'VundleVim/Vundle.vim'
- "Plugin 'mileszs/ack.vim'
  "Plugin 'The-NERD-tree'
- "Plugin 'nerdtree-ack'
  Plugin 'tpope/vim-fugitive'
  Plugin 'vim-scripts/a.vim'
  Plugin 'qpkorr/vim-bufkill'
  Plugin 'vim-airline/vim-airline'
  Plugin 'vim-airline/vim-airline-themes'
- "Plugin 'easymotion/vim-easymotion'
  Plugin 'micha/vim-colors-solarized'
  "Plugin 'kien/ctrlp.vim'
-" Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plugin 'rking/ag.vim'
  Plugin 'junegunn/fzf', { 'do': './install --all' }
  Plugin 'junegunn/fzf.vim'
  Plugin 'jlanzarotta/bufexplorer'
