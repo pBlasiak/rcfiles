@@ -67,6 +67,7 @@ set tags=./tags;,tags;./.tags;,.tags;,/home/przemek/OpenFOAM/przemek-v1612+/.tag
 
 " ********** BASIC SETTINGS **********
 set mousemodel=popup
+"set mouse=a
 set hidden
 "set textwidth=80
 set autoread
@@ -218,10 +219,17 @@ set grepprg=grep\ -nH\ $*
 " " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-"let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
+let g:Tex_DefaultTargetFormat='pdf'
+"let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf, aux'
+let g:Tex_GotoError=0
+let g:Tex_UseCiteCompletionVer2=0
 
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf = 'okular --unique'
+
+""let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
+"
+"let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
+"let g:Tex_ViewRule_pdf = 'okular --unique'
 
 
 
@@ -229,7 +237,7 @@ let g:Tex_ViewRule_pdf = 'okular --unique'
 " ********** TAGBAR **********
 nmap <F7> :TagbarToggle<CR>    
 
-let g:tagbar_ctags_bin = '/snap/bin/ctags'
+"let g:tagbar_ctags_bin = '/snap/bin/ctags'
 
 
 
@@ -272,10 +280,10 @@ map <C-c> :BD<cr>
 
 
 " ********** FZF **********
-nnoremap <C-j> :FZF ~<Cr>
-nnoremap <C-g> :Rg<Cr>
-
-command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
+"nnoremap <C-j> :FZF ~<Cr>
+"nnoremap <C-g> :Rg<Cr>
+"
+"command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 
 
 
