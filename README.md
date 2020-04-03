@@ -47,9 +47,9 @@ Useful mappings in vim
 
 &nbsp;
 
-    :A			   - Switches to the header file and vice versa
-    g;			   - Go back to previous cursor position
-    :Ag			   - Search for a word as follows :Ag [options] {pattern} [{directory}]
+    :A             - Switches to the header file and vice versa
+    g;             - Go back to previous cursor position
+    :Ag            - Search for a word as follows :Ag [options] {pattern} [{directory}]
     :FZF ~		   - Search for a file starting from the ~/ directory
     ;    		   - After 'f' command go to next occurance of a word searched
     ,    		   - After 'f' command go to previous occurance of a word searched
