@@ -8,6 +8,7 @@ Useful mappings in vim
 - F-buttons mappings
 
 &nbsp;
+
     <F2>		   - Turn on file explorer on the left
     <F3>   		   - Turn on buffer explorer
     <F6>   		   - Compile latex-suite and forward search to pdf
