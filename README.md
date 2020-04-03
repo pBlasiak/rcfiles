@@ -1,29 +1,19 @@
+My settings for vimrc, gvimrc and bashrc
+========================================
 
-Installation
+
+Usefull mappings in vim
 ------------
 
-### macOS
-
-#### Quick start, installing all completers
-
-- Install cmake, macvim and python; Note that the *system* vim is not supported.
+- F-buttons mappings
 
 &nbsp;
 
-    brew install cmake macvim python
+    <F2>   - Turn on file explorer on the left
+    <F3>   - Turn on buffer explorer
+    <F6>   - Compile latex-suite and forward search to pdf
+    <F7>   - Turn on tag bar on the right
+    <F8>   - Switch to main view in Golden View
+	<S-F8> - Switch back from main view in Golden View
 
-- Install mono, go, node and npm
-
-&nbsp;
-
-    brew install mono go nodejs
-
-- Compile YCM
-
-&nbsp;
-
-    cd ~/.vim/bundle/YouCompleteMe
-    python3 install.py --all
-
-- For plugging an arbitrary LSP server, check [the relevant section](#plugging-an-arbitrary-lsp-server)
 
