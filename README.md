@@ -8,7 +8,6 @@ Useful mappings in vim
 - F-buttons mappings
 
 &nbsp;
-
     <F2>		   - Turn on file explorer on the left
     <F3>   		   - Turn on buffer explorer
     <F6>   		   - Compile latex-suite and forward search to pdf
@@ -17,6 +16,7 @@ Useful mappings in vim
 	<S-F8> 		   - Switch back from main view in Golden View
 
 - Ctrl-buttons mappings
+
 &nbsp;
 
     <C-]>          - Jump to the tag under cursor
@@ -30,6 +30,7 @@ Useful mappings in vim
 
 
 - leader-buttons mappings 
+
 &nbsp;
 
     <leader>s      - Source vimrc
@@ -42,6 +43,7 @@ Useful mappings in vim
     <leader>gd     - YouCompleter GoToDefinition
 
 - Useful commands
+
 &nbsp;
 
     :A			   - Switches to the header file and vice versa
@@ -52,6 +54,7 @@ Useful mappings in vim
     ,    		   - After 'f' command go to previous occurance of a word searched
 
 - Mappings for vimdiff
+
 &nbsp;
 
 	<leader>t	   - diffthis
