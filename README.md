@@ -6,6 +6,7 @@ Useful mappings in vim
 ------------
 
 - F-buttons mappings
+
 &nbsp;
 
     <F2>		   - Turn on file explorer on the left
