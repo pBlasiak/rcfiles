@@ -221,6 +221,9 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats = 'pdf, aux'
 let g:Tex_GotoError=0
 let g:Tex_UseCiteCompletionVer2=0
+"to control folding
+"let g:Tex_FoldedEnvironments='figure'
+"let g:Tex_FoldedSections=''
 
 
 ""let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
