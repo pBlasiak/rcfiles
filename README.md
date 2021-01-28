@@ -53,6 +53,9 @@ Useful mappings in vim
     :FZF ~         - Search for a file starting from the ~/ directory
     ;              - After 'f' command go to next occurance of a word searched
     ,              - After 'f' command go to previous occurance of a word searched
+	~              - Switch case (e.g. lowercase to uppercase letters)
+	U              - Upper case of marked area
+	:%s/old/new/gc - replace all old with new throughout file with confirmations
 
 - Mappings for vimdiff
 
