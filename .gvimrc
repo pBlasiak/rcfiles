@@ -136,6 +136,9 @@ if &diff
 	map <leader>gr :diffget RE<CR>
 endif
 
+" ********* OTHER MAPPINGS ***********
+map E ea
+
 " ########## PLUGINS SETTINGS ##########
 
 " ********** GOLDEN-VIEW **********
