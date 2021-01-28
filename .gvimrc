@@ -190,6 +190,7 @@ let g:goldenview__ignore_urule={
 
 
 " ********** NETRW **********
+map  <F1> :Explore.<CR>
 map  <F2> :Lexplore.<CR>
 nmap <leader>q :1wincmd c<CR>
 
@@ -238,7 +239,7 @@ let g:Tex_UseCiteCompletionVer2=0
 
 
 " ********** TAGBAR **********
-nmap <F7> :TagbarToggle<CR>    
+nmap <F4> :TagbarToggle<CR>    
 
 "let g:tagbar_ctags_bin = '/snap/bin/ctags'
 
