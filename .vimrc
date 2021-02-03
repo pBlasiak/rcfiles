@@ -60,7 +60,8 @@ filetype off                  " required
 "set tags=./tags;/,tags;,~/OpenFOAM/przemek-v1612+/tags;/
 "set tags=./tags;,tags;./.tags;,.tags;,/home/przemek/OpenFOAM/przemek-v1612+/.tags
 "set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags,/home/$USER/OpenFOAM/przemek-v1612+/.tags
-set tags=./.tags;,.tags;/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags;/home/$USER/OpenFOAM/przemek-v1612+/.tags
+"set tags=./.tags;,.tags;/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags;/home/$USER/OpenFOAM/przemek-v1612+/.tags
+set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags,/home/$USER/OpenFOAM/przemek-v1612+/.tags
 
 
 
