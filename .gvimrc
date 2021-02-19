@@ -85,6 +85,7 @@ set number
 set gfn=Ubuntu\ Mono\ 13
 set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
+set belloff=all "turns off the bell while tab is pressed
 "set nowrap
 set smartindent
 if &diff
