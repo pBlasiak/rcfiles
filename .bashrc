@@ -99,6 +99,7 @@ alias qDebug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Deb
 # alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
 alias of1612='source $HOME/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_LABEL_SIZE=64'
 alias of1612Debug='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Debug'
+alias fe41='source \$HOME/foam/foam-extend-4.1/etc/bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -136,3 +137,4 @@ alias of301='source $HOME/OpenFOAM/OpenFOAM-3.0.1/etc/bashrc WM_LABEL_SIZE=64'
 alias of7='source /opt/openfoam7/etc/bashrc'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+alias of222='source $HOME/OpenFOAM/OpenFOAM-2.2.2/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI'
