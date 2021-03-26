@@ -68,6 +68,7 @@ Useful mappings in vim
 	:%s/old/new/gc - replace all old with new throughout file with confirmations
 	:Sexplore      - Opens the file explorer in horizontal spllit
 	:Vexplore      - Opens the file explorer in vertical spllit
+	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
 
 - Mappings for vimdiff
 
