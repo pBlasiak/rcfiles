@@ -9,8 +9,8 @@ Useful mappings in vim
 
 &nbsp;
 
-    <F1>           - Open file explorer in the current buffer (:Ex)
-    <F2>           - Turn on file explorer on the left 
+	<F1>           - Help
+    <F2>           - Open file explorer in the current buffer (:Ex)
     <F3>           - Turn on buffer explorer
     <F4>           - Turn on TagBar
     <F5>           - In insert or normal mode while on an empty line, 
@@ -69,6 +69,7 @@ Useful mappings in vim
 	:Sexplore      - Opens the file explorer in horizontal spllit
 	:Vexplore      - Opens the file explorer in vertical spllit
 	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
+	Ctrl+]         - In visual model go to the tag
 
 - Mappings for vimdiff
 

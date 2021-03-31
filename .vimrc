@@ -181,20 +181,9 @@ let g:goldenview__ignore_urule={
 
 
 
-" ********** NERDTree **********
-"map  <F2> :NERDTreeToggle<CR>
-
-"let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
-"let NERDTreeShowHidden=1
-"let g:NERDTreeChDirMode       = 2
-"nmap <LocalLeader>nn :NERDTreeToggle<cr>
-
-
-
-
 " ********** NETRW **********
-map  <F1> :Explore.<CR>
-map  <F2> :Lexplore.<CR>
+map  <F2> :Explore.<CR>
+"map  <F2> :Lexplore.<CR>
 nmap <leader>q :1wincmd c<CR>
 
 "map  <F2> :e.<CR>
