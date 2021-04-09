@@ -69,7 +69,8 @@ Useful mappings in vim
 	:Sexplore      - Opens the file explorer in horizontal spllit
 	:Vexplore      - Opens the file explorer in vertical spllit
 	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
-	Ctrl+]         - In visual model go to the tag
+	ctrl+]         - In visual model go to the tag (first match)
+	g]             - You can visually select a text and press g] to get a list of matching tags
 
 - Mappings for vimdiff
 
