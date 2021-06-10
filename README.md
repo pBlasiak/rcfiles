@@ -71,6 +71,7 @@ Useful mappings in vim
 	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
 	ctrl+]         - In visual model go to the tag (first match)
 	g]             - You can visually select a text and press g] to get a list of matching tags
+	".             - In this register the last inserted text is stored on
 
 - Mappings for vimdiff
 

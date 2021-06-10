@@ -33,6 +33,8 @@ filetype off                  " required
  Plugin 'zhaocai/GoldenView.Vim'
  "Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
+ "Plugin 'https://bitbucket.org/shor-ty/vimextensionopenfoam/src/master/'
+ "Plugin 'lervag/vim-foam'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -138,6 +140,10 @@ if &diff
 	map <leader>gb :diffget BA<CR>
 	map <leader>gr :diffget RE<CR>
 endif
+
+" ********* MAPPINGS FOR COPY/PASTE TO/FROM CLIPBOARD REGISTER ***********
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 " ********* OTHER MAPPINGS ***********
 map E ea
@@ -323,6 +329,8 @@ let g:ft_improved_multichars = 1
 " ********** BUFKILL **********
 "let g:BufKillOverrideCtrlCaret
 
+" ********** VIM-EXTENSION-OPENFOAM **********
+"let foam256_use_custom_colors=0
 
  
 

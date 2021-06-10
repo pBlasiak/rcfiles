@@ -140,6 +140,10 @@ if &diff
 	map <leader>gr :diffget RE<CR>
 endif
 
+" ********* MAPPINGS FOR COPY/PASTE TO/FROM CLIPBOARD REGISTER ***********
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+
 " ********* OTHER MAPPINGS ***********
 map E ea
 
