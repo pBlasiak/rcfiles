@@ -71,7 +71,21 @@ Useful mappings in vim
 	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
 	ctrl+]         - In visual model go to the tag (first match)
 	g]             - You can visually select a text and press g] to get a list of matching tags
-	".             - In this register the last inserted text is stored on
+	%              - Move to matching character ( () [] {} )
+	$              - Jump to the end of line
+    }              - Jump to next paragraph/function/block
+    {              - Jump to previous paragraph/function/block
+	zz             - Center cursor on screen
+	"xy            - Yank into register x
+	"xp            - Paste contents of register x
+	"+y            - Yank into the system clipboard register
+	"+p            - Paste from the system clipboard register
+	qa             - Record macro a
+	q              - Stop recording macro
+	@a             - Run macro a
+	@@             - Rerun last run macro
+	:noh           - Remove highlighting of search matches
+	E              - Mapping for ea (jump to end of word in insert mode)
 
 - Mappings for vimdiff
 
