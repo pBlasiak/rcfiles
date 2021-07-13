@@ -66,6 +66,10 @@ set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags,/home/$USER/Op
 
 
 " ********** BASIC SETTINGS **********
+" to have the gvim for a half of 27" screen
+set lines=224 columns=103
+" to have the gvim to start from a left upper conrner
+winpos 67 27
 set mousemodel=popup
 "set mouse=a
 set hidden
