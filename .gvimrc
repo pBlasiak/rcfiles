@@ -111,7 +111,6 @@ endif
 "   set sw=2
 "   set expandtab
 
-
 " ########## MAPPINGS ##########
 
 " ********* MAPPINGS FOR WINDOWS ###########
@@ -234,6 +233,14 @@ let g:Tex_UseCiteCompletionVer2=0
 "
 "let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
 "let g:Tex_ViewRule_pdf = 'okular --unique'
+
+
+augroup MyIMAPs
+    au!
+	au VimEnter * call IMAP('(((', '\left(<++>\right)<++>', 'tex')
+	au VimEnter * call IMAP('BBB', '\mathfbf{<++>}<++>', 'tex')
+	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
+augroup END
 
 
 
