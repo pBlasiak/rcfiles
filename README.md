@@ -97,3 +97,11 @@ Useful mappings in vim
 	<leader>gl     - diffget LO
 	<leader>gb     - diffget BA
 	<leader>gr     - diffget RE
+
+- Mappings for LaTeX-Suite
+
+&nbsp;
+
+	VVV            - \verb++
+	BBF            - \mathbf{}
+	(((            - \left( \right)
