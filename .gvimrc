@@ -208,7 +208,7 @@ autocmd FileType netrw setl bufhidden=wipe
 
 
 " ********** LATEX-SUITE **********
-map  <F6> :w<CR> <leader>ll <leader>ls
+map  <F6> :wall<CR> <leader>ll <leader>ls
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -240,6 +240,7 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('(((', '\left(<++>\right)<++>', 'tex')
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
+	au VimEnter * call IMAP('()', '(<++>)', '')
 augroup END
 
 
