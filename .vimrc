@@ -35,6 +35,11 @@ filetype off                  " required
  "Plugin 'craigemery/vim-autotag'
  "Plugin 'https://bitbucket.org/shor-ty/vimextensionopenfoam/src/master/'
  "Plugin 'lervag/vim-foam'
+ "Plugin 'SirVer/ultisnips'
+ "Plugin 'honza/vim-snippets'
+ "Plugin 'LucHermitte/lh-vim-lib'
+ "Plugin 'LucHermitte/lh-brackets'
+ Plugin 'bkad/CamelCaseMotion'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -207,7 +212,7 @@ autocmd FileType netrw setl bufhidden=wipe
 
 
 " ********** LATEX-SUITE **********
-map  <F6> :w<CR> <leader>ll <leader>ls
+map  <F6> :wall<CR> <leader>ll <leader>ls
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -220,8 +225,12 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 "let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf = 'okular --unique'
+augroup MyIMAPs
+    au!
+	au VimEnter * call IMAP('()', '(<++>)', '')
+	au VimEnter * call IMAP('[]', '[<++>]', '')
+	au VimEnter * call IMAP('{}', '{<++>}', '')
+augroup END
 
 
 
@@ -317,7 +326,10 @@ let g:ft_improved_multichars = 1
 "let g:ft_improved_ignorecase = 1
 
 
-
+"" ********** ULTISNIPS **********
+"let g:UltiSnipsExpandTrigger="<space>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 " ********** AUTOTAG **********
@@ -329,8 +341,16 @@ let g:ft_improved_multichars = 1
 " ********** BUFKILL **********
 "let g:BufKillOverrideCtrlCaret
 
-" ********** VIM-EXTENSION-OPENFOAM **********
-"let foam256_use_custom_colors=0
 
- 
+" ********** CAMELCASEMOTION **********
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
+imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w

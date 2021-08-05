@@ -33,6 +33,13 @@ filetype off                  " required
  Plugin 'zhaocai/GoldenView.Vim'
  "Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
+ "Plugin 'https://bitbucket.org/shor-ty/vimextensionopenfoam/src/master/'
+ "Plugin 'lervag/vim-foam'
+ "Plugin 'SirVer/ultisnips'
+ "Plugin 'honza/vim-snippets'
+ "Plugin 'LucHermitte/lh-vim-lib'
+ "Plugin 'LucHermitte/lh-brackets'
+ Plugin 'bkad/CamelCaseMotion'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -241,6 +248,8 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
 	au VimEnter * call IMAP('()', '(<++>)', '')
+	au VimEnter * call IMAP('[]', '[<++>]', '')
+	au VimEnter * call IMAP('{}', '{<++>}', '')
 augroup END
 
 
@@ -337,7 +346,10 @@ let g:ft_improved_multichars = 1
 "let g:ft_improved_ignorecase = 1
 
 
-
+"" ********** ULTISNIPS **********
+"let g:UltiSnipsExpandTrigger="<space>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 " ********** AUTOTAG **********
@@ -350,5 +362,15 @@ let g:ft_improved_multichars = 1
 "let g:BufKillOverrideCtrlCaret
 
 
- 
+" ********** CAMELCASEMOTION **********
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
+imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
