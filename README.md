@@ -10,7 +10,7 @@ Useful mappings in vim
 &nbsp;
 
 	<F1>           - Help
-    <F2>           - Open file explorer in the current buffer (:Ex)
+    <F2>           - Open file explorer in the current buffer (:Explore .)
     <F3>           - Turn on buffer explorer
     <F4>           - Turn on TagBar
     <F5>           - In insert or normal mode while on an empty line, 
@@ -48,7 +48,7 @@ Useful mappings in vim
     <leader>n      - Set file as nomodifiable
     <leader>m      - Set file as modifiable
     <leader>q      - Close the most left window
-    <leader>e      - Open netrw in current buffer
+    <leader>e      - Open netrw in current file directory (:Ex)
     <leader>d      - YouCompleter GoTo
     <leader>gh     - YouCompleter GoToDeclaration
     <leader>gd     - YouCompleter GoToDefinition

@@ -202,7 +202,7 @@ map  <F2> :Explore.<CR>
 nmap <leader>q :1wincmd c<CR>
 
 "map  <F2> :e.<CR>
-map <leader>e :Ex.<CR>
+map <leader>e :Ex<CR>
 
 let g:netrw_liststyle = 3
 "let g:netrw_browse_split = 4
