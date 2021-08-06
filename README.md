@@ -65,7 +65,8 @@ Useful mappings in vim
     ,              - After 'f' command go to previous occurance of a word searched
 	~              - Switch case (e.g. lowercase to uppercase letters)
 	U              - Upper case of marked area
-	:%s/old/new/gc - replace all old with new throughout file with confirmations
+	:%s/old/new/gc - Replace all old with new throughout file with confirmations
+	:Ex            - Opens the directory of the current file
 	:Sexplore      - Opens the file explorer in horizontal spllit
 	:Vexplore      - Opens the file explorer in vertical spllit
 	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
