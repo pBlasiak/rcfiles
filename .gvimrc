@@ -39,7 +39,8 @@ filetype off                  " required
  "Plugin 'honza/vim-snippets'
  "Plugin 'LucHermitte/lh-vim-lib'
  "Plugin 'LucHermitte/lh-brackets'
- Plugin 'bkad/CamelCaseMotion'
+ "Plugin 'bkad/CamelCaseMotion'
+ Plugin 'chaoren/vim-wordmotion'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line

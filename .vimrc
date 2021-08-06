@@ -39,7 +39,8 @@ filetype off                  " required
  "Plugin 'honza/vim-snippets'
  "Plugin 'LucHermitte/lh-vim-lib'
  "Plugin 'LucHermitte/lh-brackets'
- Plugin 'bkad/CamelCaseMotion'
+ "Plugin 'bkad/CamelCaseMotion'
+ Plugin 'chaoren/vim-wordmotion'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -343,14 +344,23 @@ let g:ft_improved_multichars = 1
 
 
 " ********** CAMELCASEMOTION **********
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
+"map <silent> w <Plug>CamelCaseMotion_w
+"map <silent> b <Plug>CamelCaseMotion_b
+"map <silent> e <Plug>CamelCaseMotion_e
+"map <silent> ge <Plug>CamelCaseMotion_ge
+"sunmap w
+"sunmap b
+"sunmap e
+"sunmap ge
+"
+"imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+"imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
 
-imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
-imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
+
+" ********** VIM-WORDMOTION **********
+"let g:wordmotion_nomap = 1
+"nmap w          <Plug>WordMotion_w
+"nmap b          <Plug>WordMotion_b
+"nmap gE         <Plug>WordMotion_gE
+"omap aW         <Plug>WordMotion_aW
+"cmap <C-R><C-W> <Plug>WordMotion_<C-R><C-W>
