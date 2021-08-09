@@ -226,6 +226,9 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 "let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf = 'okular --unique'
+
 augroup MyIMAPs
     au!
 	au VimEnter * call IMAP('()', '(<++>)', '')
