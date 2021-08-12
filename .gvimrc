@@ -11,8 +11,9 @@ filetype off                  " required
  Plugin 'tpope/vim-fugitive'
  Plugin 'vim-scripts/a.vim'
  Plugin 'qpkorr/vim-bufkill'
- Plugin 'vim-airline/vim-airline'
- Plugin 'vim-airline/vim-airline-themes'
+
+ "Plugin 'vim-airline/vim-airline'
+ "Plugin 'vim-airline/vim-airline-themes'
  Plugin 'micha/vim-colors-solarized'
  "Plugin 'kien/ctrlp.vim'
  Plugin 'rking/ag.vim'
@@ -37,10 +38,17 @@ filetype off                  " required
  "Plugin 'lervag/vim-foam'
  "Plugin 'SirVer/ultisnips'
  "Plugin 'honza/vim-snippets'
- "Plugin 'LucHermitte/lh-vim-lib'
- "Plugin 'LucHermitte/lh-brackets'
+ 
+ ""Plugin 'LucHermitte/lh-vim-lib'
+ ""Plugin 'LucHermitte/lh-brackets'
+
+ "Plugin 'statox/betterTabs.vim'
+
  "Plugin 'bkad/CamelCaseMotion'
  Plugin 'chaoren/vim-wordmotion'
+
+ Plugin 'zefei/vim-wintabs'
+ Plugin 'zefei/vim-wintabs-powerline'
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -288,8 +296,8 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " ********** BUFFERS EXPLORER **********
 nnoremap <silent> <F3> :BufExplorer<CR>
-map  <C-k> :bn<CR>
-map  <C-h> :bprevious<CR>
+"map  <C-k> :bn<CR>
+"map  <C-h> :bprevious<CR>
 
 
 
@@ -332,10 +340,10 @@ map <C-c> :BD<cr>
 " ********** VIM-AIRLINE **********
 "let g:airline#extensions#tabline#formatter = 'unique-tail_improved'
 " Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 "
 " " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 
@@ -364,14 +372,40 @@ let g:ft_improved_multichars = 1
 
 
 " ********** CAMELCASEMOTION **********
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
+"map <silent> w <Plug>CamelCaseMotion_w
+"map <silent> b <Plug>CamelCaseMotion_b
+"map <silent> e <Plug>CamelCaseMotion_e
+"map <silent> ge <Plug>CamelCaseMotion_ge
+"sunmap w
+"sunmap b
+"sunmap e
+"sunmap ge
+"
+"imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+"imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
 
-imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
-imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
+
+" ********** VIM-WORDMOTION **********
+"let g:wordmotion_nomap = 1
+"nmap w          <Plug>WordMotion_w
+"nmap b          <Plug>WordMotion_b
+"nmap gE         <Plug>WordMotion_gE
+"omap aW         <Plug>WordMotion_aW
+"cmap <C-R><C-W> <Plug>WordMotion_<C-R><C-W>
+
+" ********** LH-BRACKETS **********
+""imap <C-G>      <Plug>MarkersJumpF
+"" map <C-G>      <Plug>MarkersJumpF
+
+
+" ********** WINTABS **********
+map <C-K> <Plug>(wintabs_previous)
+map <C-H> <Plug>(wintabs_next)
+map <C-T>c <Plug>(wintabs_close)
+map <C-T>u <Plug>(wintabs_undo)
+map <C-T>o <Plug>(wintabs_only)
+map <C-W>c <Plug>(wintabs_close_window)
+map <C-W>o <Plug>(wintabs_only_window)
+command! Tabc WintabsCloseVimtab
+command! Tabo WintabsOnlyVimtab
+
