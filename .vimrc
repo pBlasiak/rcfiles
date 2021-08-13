@@ -382,8 +382,8 @@ let g:ft_improved_multichars = 1
 
 
 " ********** WINTABS **********
-map <C-K> <Plug>(wintabs_previous)
-map <C-H> <Plug>(wintabs_next)
+map <C-H> <Plug>(wintabs_previous)
+map <C-K> <Plug>(wintabs_next)
 map <C-T>c <Plug>(wintabs_close)
 map <C-T>u <Plug>(wintabs_undo)
 map <C-T>o <Plug>(wintabs_only)
