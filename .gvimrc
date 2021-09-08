@@ -31,7 +31,7 @@ filetype off                  " required
  "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
  Plugin 'chrisbra/improvedft'
  "Plugin 'spolu/dwm.vim'
- Plugin 'zhaocai/GoldenView.Vim'
+ "Plugin 'zhaocai/GoldenView.Vim'
  "Plugin 'dahu/vim-fanfingtastic'
  "Plugin 'craigemery/vim-autotag'
  "Plugin 'https://bitbucket.org/shor-ty/vimextensionopenfoam/src/master/'
@@ -130,10 +130,10 @@ endif
 " ########## MAPPINGS ##########
 
 " ********* MAPPINGS FOR WINDOWS ###########
-"nmap <silent> <C-L> :vs<CR>
-"nmap <silent> <C-M> :sp<CR>
-"nmap <silent> <C-N> <C-W><C-W>
-"nmap <silent> <C-P> <C-W><C-P>
+nmap <silent> <C-L> :vs<CR>
+nmap <silent> <C-M> :sp<CR>
+nmap <silent> <C-N> <C-W><C-W>
+nmap <silent> <C-P> <C-W><C-P>
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
@@ -168,38 +168,38 @@ map E ea
 
 " ########## PLUGINS SETTINGS ##########
 
-" ********** GOLDEN-VIEW **********
-" 1. split to tiled windows
- nmap <silent> <C-L>  <Plug>GoldenViewSplit
-" 2. quickly switch current window with the main pane
-" and toggle back
- nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
- nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-" 3. jump to next and previous window
- nmap <silent> <C-N>  <Plug>GoldenViewNext
- nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-
-let g:goldenview__enable_at_startup = 0
-"let g:goldenview__enable_default_mapping = 0
-let g:goldenview__ignore_urule={
-\   'filetype' : [
-\     ''        ,
-\     'qf'      , 'vimpager', 'undotree', 'tagbar',
-\     'nerdtree', 'vimshell', 'vimfiler', 'voom'  ,
-\     'tabman'  , 'unite'   , 'quickrun', 'Decho' ,
-\     'ControlP', 'diff'    , 'extradite'
-\   ],
-\   'buftype' : [
-\     'nofile'  , 'terminal'
-\   ],
-\   'bufname' : [
-\     'GoToFile'                  , 'diffpanel_\d\+'      , 
-\     '__Gundo_Preview__'         , '__Gundo__'           , 
-\     '\[LustyExplorer-Buffers\]' , '\-MiniBufExplorer\-' , 
-\     '_VOOM\d\+$'                , '__Urannotate_\d\+__' , 
-\     '__MRU_Files__' , 'FencView_\d\+$'
-\   ],
-\ }
+"" ********** GOLDEN-VIEW **********
+"" 1. split to tiled windows
+" nmap <silent> <C-L>  <Plug>GoldenViewSplit
+"" 2. quickly switch current window with the main pane
+"" and toggle back
+" nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+" nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+"" 3. jump to next and previous window
+" nmap <silent> <C-N>  <Plug>GoldenViewNext
+" nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+"
+"let g:goldenview__enable_at_startup = 0
+""let g:goldenview__enable_default_mapping = 0
+"let g:goldenview__ignore_urule={
+"\   'filetype' : [
+"\     ''        ,
+"\     'qf'      , 'vimpager', 'undotree', 'tagbar',
+"\     'nerdtree', 'vimshell', 'vimfiler', 'voom'  ,
+"\     'tabman'  , 'unite'   , 'quickrun', 'Decho' ,
+"\     'ControlP', 'diff'    , 'extradite'
+"\   ],
+"\   'buftype' : [
+"\     'nofile'  , 'terminal'
+"\   ],
+"\   'bufname' : [
+"\     'GoToFile'                  , 'diffpanel_\d\+'      , 
+"\     '__Gundo_Preview__'         , '__Gundo__'           , 
+"\     '\[LustyExplorer-Buffers\]' , '\-MiniBufExplorer\-' , 
+"\     '_VOOM\d\+$'                , '__Urannotate_\d\+__' , 
+"\     '__MRU_Files__' , 'FencView_\d\+$'
+"\   ],
+"\ }
 
 
 
