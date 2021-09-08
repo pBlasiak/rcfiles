@@ -404,7 +404,6 @@ let g:ft_improved_multichars = 1
 "let g:wintabs_ui_sep_leftmost=''
 "let g:wintabs_ui_sep_inbetween='|'
 "let g:wintabs_ui_sep_rightmost='|'
-map <C-M> :WintabsAllBuffers<CR>
 map <C-H> <Plug>(wintabs_previous)
 map <C-K> <Plug>(wintabs_next)
 map <C-T>c <Plug>(wintabs_close)
