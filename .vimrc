@@ -242,6 +242,7 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('()', '(<++>)', '')
 	au VimEnter * call IMAP('[]', '[<++>]', '')
 	au VimEnter * call IMAP('{}', '{<++>}', '')
+	au VimEnter * call IMAP('RRR', '\href{<++>}{<++>}', '')
 augroup END
 
 

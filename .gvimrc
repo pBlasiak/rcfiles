@@ -254,6 +254,7 @@ let g:Tex_UseCiteCompletionVer2=0
 augroup MyIMAPs
     au!
 	au VimEnter * call IMAP('(((', '\left(<++>\right)<++>', 'tex')
+	au VimEnter * call IMAP('RRR', '\href{<++>}{<++>}', '')
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
 	au VimEnter * call IMAP('()', '(<++>)', '')
