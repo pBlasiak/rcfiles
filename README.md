@@ -22,8 +22,8 @@ Useful mappings in vim
     <F7>           - In insert or normal mode while the cursor is touching a word will insert a command 
 	                 formed from the word touching the cursor (Latex-Suite). You can select a portion of text 
 					 visually and press <F7> while still in visual mode. This will prompt you with a list of commands.
-    <F8>           - Switch to main view in Golden View
-	<S-F8>         - Switch back from main view in Golden View
+    <F8>           - FREE
+	<S-F8>         - FREE
     <F9>           - For \cite, \ref and file completion in Latex-Suite
 
 - Ctrl-buttons mappings
