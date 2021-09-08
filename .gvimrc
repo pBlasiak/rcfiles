@@ -130,8 +130,8 @@ endif
 " ########## MAPPINGS ##########
 
 " ********* MAPPINGS FOR WINDOWS ###########
-nmap <silent> <C-L> :vs<CR>
-nmap <silent> <C-M> :sp<CR>
+nmap <silent> <C-L> :vs<CR><C-W><C-W>
+nmap <silent> <C-M> :sp<CR><C-W><C-W>
 nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><C-P>
 
