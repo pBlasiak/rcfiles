@@ -387,7 +387,7 @@ let g:ft_improved_multichars = 1
 
 
 " ********** VIM-WORDMOTION **********
-let g:wordmotion_uppercase_spaces = ['_', '/', '.']
+let g:wordmotion_uppercase_spaces = ['_', '/', '.', ';']
 
 " ********** LH-BRACKETS **********
 ""imap <C-G>      <Plug>MarkersJumpF
