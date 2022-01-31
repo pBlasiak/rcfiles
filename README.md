@@ -52,6 +52,8 @@ Useful mappings in vim
     <leader>d      - YouCompleter GoTo
     <leader>gh     - YouCompleter GoToDeclaration
     <leader>gd     - YouCompleter GoToDefinition
+    <Leader>y      - "+y
+    <Leader>p      - "+p
 
 - Useful commands
 
