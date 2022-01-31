@@ -33,6 +33,7 @@ Useful mappings in vim
     <C-]>          - Jump to the tag under cursor
     <C-LeftMouse>  - Jump to the tag under cursor
     <C-L>          - Vertical split
+    <C-M>          - Horizontal split
     <C-N>          - Go to next view
     <C-P>          - Go to previous view
     <C-K>          - Go to next buffer
