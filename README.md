@@ -39,6 +39,11 @@ Useful mappings in vim
     <C-K>          - Go to next buffer
     <C-H>          - Go to previous buffer
     <C-C>          - Buffer kill without closing buffer
+	<C-T>o         - Close all but current buffer (similar to <C-C>)
+	<C-T>c         - Close current buffer
+	<C-T>u         - Undo closed buffer
+	<C-W>o         - Close all but current window
+	<C-W>c         - Close current window
 
 
 - leader-buttons mappings 
@@ -55,6 +60,7 @@ Useful mappings in vim
     <leader>gd     - YouCompleter GoToDefinition
     <Leader>y      - "+y
     <Leader>p      - "+p
+    <Leader>w      - load all buffers from current tab to current window (:WintabsAll)
 
 - Useful commands
 
@@ -90,6 +96,7 @@ Useful mappings in vim
 	@@             - Rerun last run macro
 	:noh           - Remove highlighting of search matches
 	E              - Mapping for ea (jump to end of word in insert mode)
+	:Wallbuffers   - Load all buffers from all tabs to current window (:WintabsAllBuffers)
 
 - Mappings for vimdiff
 

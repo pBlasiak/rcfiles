@@ -401,11 +401,20 @@ let g:wordmotion_uppercase_spaces = ['_', '/', '.', ';']
 "let g:wintabs_ui_sep_rightmost='|'
 map <C-H> <Plug>(wintabs_previous)
 map <C-K> <Plug>(wintabs_next)
+" close current buffer (like Ctrl+C)
 map <C-T>c <Plug>(wintabs_close)
+" undo recently closed buffer 
 map <C-T>u <Plug>(wintabs_undo)
+" close all but current buffer 
 map <C-T>o <Plug>(wintabs_only)
+" close current window
 map <C-W>c <Plug>(wintabs_close_window)
+" close all but current window 
 map <C-W>o <Plug>(wintabs_only_window)
+" loads all buffers from current tab to current window
+map <leader>w <Plug>(wintabs_all)
+" loads all buffers from all tabs to current window
+command! Wallbufferfs WintabsAllBuffers
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
 
