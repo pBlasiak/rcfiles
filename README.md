@@ -114,5 +114,6 @@ Useful mappings in vim
 &nbsp;
 
 	VVV            - \verb++
-	BBF            - \mathbf{}
+	BBB            - \mathbf{}
+	RRR            - \mathrm{}
 	(((            - \left( \right)
