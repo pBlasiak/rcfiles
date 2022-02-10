@@ -120,3 +120,9 @@ Useful mappings in vim
 	BBB            - \mathbf{}
 	RRR            - \mathrm{}
 	(((            - \left( \right)
+
+- Other mappings
+
+&nbsp;
+
+	HHH            - \href{}{<++>}
