@@ -67,6 +67,9 @@ Useful mappings in vim
 &nbsp;
 
     :A             - Switches to the header file and vice versa
+	:AS            - Splits and switches
+    :AV            - Vertical splits and switches
+    :AT            - New tab and switches
     g;             - Go back to previous cursor position
     :Ag            - Search for a word as follows :Ag [options] {pattern} [{directory}]
     :FZF ~         - Search for a file starting from the ~/ directory
