@@ -100,6 +100,7 @@ Useful mappings in vim
 	:noh           - Remove highlighting of search matches
 	E              - Mapping for ea (jump to end of word in insert mode)
 	:Wallbuffers   - Load all buffers from all tabs to current window (:WintabsAllBuffers)
+	:Gvdiffsplit HEAD~3:%   - Brings up the staged version of the file side by side with the version 3 commits ago
 
 - Mappings for vimdiff
 
