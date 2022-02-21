@@ -165,6 +165,8 @@ noremap <Leader>p "+p
 
 " ********* OTHER MAPPINGS ***********
 map E ea
+" insert { } and enter between them
+inoremap {<CR> {<CR>}<ESC>O 
 
 " ########## PLUGINS SETTINGS ##########
 
