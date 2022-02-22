@@ -161,8 +161,13 @@ noremap <Leader>p "+p
 
 " ********* OTHER MAPPINGS ***********
 map E ea
+
 " insert { } and enter between them
 inoremap {<CR> {<CR>}<ESC>O 
+
+" highlights the line with the cursor
+map <Leader>h :set cursorline<CR> & :highlight CursorLine guibg=lightblue ctermbg=lightgrey<CR>
+map <Leader>H :set nocursorline<CR>
 
 " ########## PLUGINS SETTINGS ##########
 
