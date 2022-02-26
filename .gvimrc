@@ -169,6 +169,9 @@ map E ea
 " insert { } and enter between them
 inoremap {<CR> {<CR>}<ESC>O 
 
+" insert ( ) and enter between them
+inoremap (<CR> (<CR>)<ESC>O <space><space><space><space>
+
 " highlights the line with the cursor
 map <Leader>h :set cursorline<CR> & :highlight CursorLine guibg=lightblue ctermbg=lightgrey<CR>
 map <Leader>H :set nocursorline<CR>

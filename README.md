@@ -91,6 +91,7 @@ Useful mappings in vim
     }              - Jump to next paragraph/function/block
     {              - Jump to previous paragraph/function/block
 	{<CR>          - Auto close { } and insert new line between them
+	(<CR>          - Auto close ( ) and insert new line between them
 	zz             - Center cursor on screen
 	"xy            - Yank into register x
 	"xp            - Paste contents of register x
