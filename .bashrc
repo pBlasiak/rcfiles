@@ -97,7 +97,7 @@ alias m='cd ~/OpenFOAM/przemek-v1612+/applications/solvers/multiphase'
 alias qDebug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Debug && qtcreator&'
 
 # alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
-alias of1612='source $HOME/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_LABEL_SIZE=64'
+alias of2106='source $HOME/OpenFOAM/OpenFOAM-v2106/etc/bashrc WM_LABEL_SIZE=64'
 alias of1612Debug='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Debug'
 alias of1612Prof='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Prof'
 
