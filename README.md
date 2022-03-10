@@ -63,6 +63,7 @@ Useful mappings in vim
     <Leader>w      - load all buffers from current tab to current window (:WintabsAll)
     <Leader>h      - highlights the line with the cursor
     <Leader>H      - unset <Leader>h
+    <Leader>t      - Rebuild the .tags file in the directory of the current source file
 
 - Useful commands
 
