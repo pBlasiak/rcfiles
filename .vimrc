@@ -132,7 +132,7 @@ nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><S-W>
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
-nmap \t :!(cd %:p:h; ctags --extra=+qf --fields=+l --extra=+qf --fields=+l --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
+nmap \t :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
 nnoremap <C-]> g<C-]>
 nnoremap <C-LeftMouse> g<C-]>
 
