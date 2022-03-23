@@ -140,6 +140,6 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 alias of222='source $HOME/OpenFOAM/OpenFOAM-2.2.2/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI'
 alias fe41='source $HOME/foam/foam-extend-4.1/etc/bashrc'
 alias fe40='source $HOME/foam/foam-extend-4.0/etc/bashrc'
-alias of80='source /opt/openfoam8/etc/bashrc'
+alias of90='source /opt/openfoam9/etc/bashrc'
 export PATH=/opt/ParaView-5.9.0-MPI-Linux-Python3.7-64bit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH=$HOME/doxygen-1.9.1/bin:$PATH
