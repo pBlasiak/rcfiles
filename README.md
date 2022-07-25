@@ -125,6 +125,7 @@ Useful mappings in vim
 	VVV            - \verb++
 	BBB            - \mathbf{}
 	RRR            - \mathrm{}
+	TTT            - \todo[size=\small, color=<++>!40]{<++>}<++>
 	(((            - \left( \right)
 
 - Other mappings
