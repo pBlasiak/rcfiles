@@ -432,3 +432,6 @@ command! Wallbufferfs WintabsAllBuffers
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
 
+" ********** RESTORE-VIM **********
+set viewoptions=cursor,folds,slash,unix
+" let g:skipview_files = ['*\.vim'] 
