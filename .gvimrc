@@ -269,6 +269,7 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('RRR', '\mathrm{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
+	au VimEnter * call IMAP('CCC', '\cite{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('TTT', '\todo[size=\small, color=<++>!40]{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('()', '(<++>)', '')
 	au VimEnter * call IMAP('[]', '[<++>]', '')
