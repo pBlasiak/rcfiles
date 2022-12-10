@@ -64,6 +64,8 @@ Useful mappings in vim
     <Leader>h      - highlights the line with the cursor
     <Leader>H      - unset <Leader>h
     <Leader>t      - Rebuild the .tags file in the directory of the current source file
+	<Leader>g      - :Gvdiffsplit HEAD~3:%  Brings up the staged version of the file side by side with the version 3 commits ago
+	<Leader>tm     - Opens terminal in left bottom split
 
 - Useful commands
 

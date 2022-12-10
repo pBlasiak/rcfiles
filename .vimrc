@@ -162,6 +162,9 @@ noremap <Leader>p "+p
 
 " ********* OTHER MAPPINGS ***********
 map E ea
+map <Leader>g :Gvdiffsplit HEAD~1:%
+"nnoremap <leader>tm :topleft term<cr>
+nnoremap <leader>tm :rightbelow term<cr>
 
 " insert { } and enter between them
 inoremap {<CR> {<CR>}<ESC>O 
