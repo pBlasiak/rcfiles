@@ -47,8 +47,8 @@ filetype off                  " required
  "Plugin 'bkad/CamelCaseMotion'
  Plugin 'chaoren/vim-wordmotion'
 
- Plugin 'zefei/vim-wintabs'
- Plugin 'zefei/vim-wintabs-powerline'
+ "Plugin 'zefei/vim-wintabs'
+ "Plugin 'zefei/vim-wintabs-powerline'
  "Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
 
 " ********** VUNDLE END **********
