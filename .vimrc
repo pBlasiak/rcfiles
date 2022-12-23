@@ -137,6 +137,9 @@ nmap <silent> <C-L> :vs<CR><C-W><C-W>
 nmap <silent> <C-M> :sp<CR><C-W><C-W>
 nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><S-W>
+" move among buffers with CTRL
+map <C-K> :bnext<CR>
+map <C-H> :bprev<CR>
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
 nmap \t :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
@@ -406,8 +409,8 @@ let g:wordmotion_uppercase_spaces = ['_', '/', '.', ',', ';', '::', '>', '"', ']
 "let g:wintabs_ui_sep_leftmost=''
 "let g:wintabs_ui_sep_inbetween='|'
 "let g:wintabs_ui_sep_rightmost='|'
-map <C-H> <Plug>(wintabs_previous)
-map <C-K> <Plug>(wintabs_next)
+"map <C-H> <Plug>(wintabs_previous) "if enabled closes buffers with ctrl+h
+"map <C-K> <Plug>(wintabs_next)
 " close current buffer (like Ctrl+C)
 map <C-T>c <Plug>(wintabs_close)
 " undo recently closed buffer 
