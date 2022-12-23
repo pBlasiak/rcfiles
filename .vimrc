@@ -80,6 +80,12 @@ filetype off                  " required
 "set tags=./.tags;,.tags;/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags;/home/$USER/OpenFOAM/przemek-v1612+/.tags
 set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v2106/.tags,/home/$USER/OpenFOAM/przemek-v2106/.tags
 
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
 
 
 " ********** BASIC SETTINGS **********
