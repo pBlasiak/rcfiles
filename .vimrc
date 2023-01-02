@@ -49,7 +49,7 @@ filetype off                  " required
 
  Plugin 'zefei/vim-wintabs'
  Plugin 'zefei/vim-wintabs-powerline'
- "Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
+ Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
@@ -388,7 +388,7 @@ let g:ft_improved_multichars = 1
 
 
 " ********** VIM-WORDMOTION **********
-let g:wordmotion_uppercase_spaces = ['_', '/', '.', ',', ';', '::', '>', '"', ']', ')', '}']
+let g:wordmotion_uppercase_spaces = ['_', '/', '.', ',', ';', '::', '>', '"', '[', ']', '(', ')', '{', '}']
 
 " ********** LH-BRACKETS **********
 ""imap <C-G>      <Plug>MarkersJumpF
