@@ -13,7 +13,8 @@ Useful mappings in vim
     <F2>           - Open file explorer in the current buffer (:Explore .)
     <F3>           - Turn on buffer explorer
     <F4>           - Turn on TagBar
-    <F5>           - In insert or normal mode while on an empty line, 
+    <F5>           - VIM: :TagbarTogglePause<CR>
+    <F5>           - GVIM: In insert or normal mode while on an empty line, 
 	                 Latex-Suite prompts you with a list of environments you might want to insert. 
 					 You can either choose one from the list or type in a new environment name. 
 					 If you press <F5> on a line which already has a word, then that word is used instead of prompting.
