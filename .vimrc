@@ -267,8 +267,10 @@ augroup END
 
 " ********** TAGBAR **********
 nmap <F4> :TagbarToggle<CR>    
+nmap <F5> :TagbarTogglePause<CR>    
 
 "let g:tagbar_ctags_bin = '/snap/bin/ctags'
+let g:tagbar_sort = 0
 
 
 
