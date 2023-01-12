@@ -49,7 +49,7 @@ filetype off                  " required
 
  Plugin 'zefei/vim-wintabs'
  Plugin 'zefei/vim-wintabs-powerline'
- Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
+ "Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
 
 " ********** VUNDLE END **********
 " All of your Plugins must be added before the following line
