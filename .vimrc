@@ -253,13 +253,13 @@ let g:Tex_ViewRule_pdf = 'okular --unique'
 
 augroup MyIMAPs
     au!
-	au VimEnter * call IMAP('()', '(<++>)', '')
-	au VimEnter * call IMAP('[]', '[<++>]', '')
-	au VimEnter * call IMAP('{}', '{<++>}', '')
-	au VimEnter * call IMAP('<>', '<<++>>', '')
-	au VimEnter * call IMAP('""', '"<++>"', '')
-	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}', '')
-	au VimEnter * call IMAP('hl', '\hl{<++>}', '')
+	au VimEnter * call IMAP('()', '(<++>)<++>', '')
+	au VimEnter * call IMAP('[]', '[<++>]<++>', '')
+	au VimEnter * call IMAP('{}', '{<++>}<++>', '')
+	au VimEnter * call IMAP('""', '"<++>"<++>', '')
+	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
+	au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
+	au VimEnter * call IMAP('<>', '<<++>><++>', '')
 augroup END
 
 

@@ -264,12 +264,12 @@ let g:Tex_UseCiteCompletionVer2=0
 
 augroup MyIMAPs
     au!
-	au VimEnter * call IMAP('()', '(<++>)', '')
-	au VimEnter * call IMAP('[]', '[<++>]', '')
-	au VimEnter * call IMAP('{}', '{<++>}', '')
-	au VimEnter * call IMAP('""', '"<++>"', '')
-	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}', '')
-	au VimEnter * call IMAP('hl', '\hl{<++>}', '')
+	au VimEnter * call IMAP('()', '(<++>)<++>', '')
+	au VimEnter * call IMAP('[]', '[<++>]<++>', '')
+	au VimEnter * call IMAP('{}', '{<++>}<++>', '')
+	au VimEnter * call IMAP('""', '"<++>"<++>', '')
+	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
+	au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
 
 	au VimEnter * call IMAP('(((', '\left(<++>\right)<++>', 'tex')
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
