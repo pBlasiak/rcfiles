@@ -72,7 +72,7 @@ Useful mappings in vim
 
 &nbsp;
 
-    :A					    - Switches to the header file and vice versa
+    :A                      - Switches to the header file and vice versa
 	:AS            		    - Splits and switches
     :AV            		    - Vertical splits and switches
     :AT            		    - New tab and switches
