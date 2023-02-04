@@ -72,42 +72,57 @@ Useful mappings in vim
 
 &nbsp;
 
-    :A             - Switches to the header file and vice versa
-	:AS            - Splits and switches
-    :AV            - Vertical splits and switches
-    :AT            - New tab and switches
-    g;             - Go back to previous cursor position
-    :Ag            - Search for a word as follows :Ag [options] {pattern} [{directory}]
-    :FZF ~         - Search for a file starting from the ~/ directory
-    ;              - After 'f' command go to next occurance of a word searched
-    ,              - After 'f' command go to previous occurance of a word searched
-	~              - Switch case (e.g. lowercase to uppercase letters)
-	U              - Upper case of marked area
-	:%s/old/new/gc - Replace all old with new throughout file with confirmations
-	:Ex            - Opens the directory of the current file
-	:Sexplore      - Opens the file explorer in horizontal spllit
-	:Vexplore      - Opens the file explorer in vertical spllit
-	ctrl+v         - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
-	ctrl+]         - In visual model go to the tag (first match)
-	g]             - You can visually select a text and press g] to get a list of matching tags
-	%              - Move to matching character ( () [] {} )
-	$              - Jump to the end of line
-    }              - Jump to next paragraph/function/block
-    {              - Jump to previous paragraph/function/block
-	{<CR>          - Auto close { } and insert new line between them
-	(<CR>          - Auto close ( ) and insert new line between them
-	zz             - Center cursor on screen
-	"xy            - Yank into register x
-	"xp            - Paste contents of register x
-	"+y            - Yank into the system clipboard register
-	"+p            - Paste from the system clipboard register
-	qa             - Record macro a
-	q              - Stop recording macro
-	@a             - Run macro a
-	@@             - Rerun last run macro
-	:noh           - Remove highlighting of search matches
-	E              - Mapping for ea (jump to end of word in insert mode)
-	:Wallbuffers   - Load all buffers from all tabs to current window (:WintabsAllBuffers)
+    :A					    - Switches to the header file and vice versa
+	:AS            		    - Splits and switches
+    :AV            		    - Vertical splits and switches
+    :AT            		    - New tab and switches
+    g;             		    - Go back to previous cursor position
+    :Ag            		    - Search for a word as follows :Ag [options] {pattern} [{directory}]
+    :FZF ~         		    - Search for a file starting from the ~/ directory
+    ;              		    - After 'f' command go to next occurance of a word searched
+    ,              		    - After 'f' command go to previous occurance of a word searched
+	~              		    - Switch case (e.g. lowercase to uppercase letters)
+	U              		    - Upper case of marked area
+	:%s/old/new/gc 		    - Replace all old with new throughout file with confirmations
+	:Ex            		    - Opens the directory of the current file
+	:Sexplore      		    - Opens the file explorer in horizontal spllit
+	:Vexplore      		    - Opens the file explorer in vertical spllit
+	ctrl+v         		    - In insert mode it inserts character literally (e.g. IMAP in latex-suite is off) 
+	ctrl+]         		    - In visual model go to the tag (first match)
+	g]             		    - You can visually select a text and press g] to get a list of matching tags
+	%              		    - Move to matching character ( () [] {} )
+	$              		    - Jump to the end of line
+    }              		    - Jump to next paragraph/function/block
+    {              		    - Jump to previous paragraph/function/block
+	{<CR>          		    - Auto close { } and insert new line between them
+	(<CR>          		    - Auto close ( ) and insert new line between them
+	zz             		    - Center cursor on screen
+	"xy            		    - Yank into register x
+	"xp            		    - Paste contents of register x
+	"+y            		    - Yank into the system clipboard register
+	"+p            		    - Paste from the system clipboard register
+	qa             		    - Record macro a
+	q              		    - Stop recording macro
+	@a             		    - Run macro a
+	@@             		    - Rerun last run macro
+	:noh           		    - Remove highlighting of search matches
+	E              		    - Mapping for ea (jump to end of word in insert mode)
+    aw			   		    - mark a word
+    ab             		    - a block with ()
+    aB	           		    - a block with {}
+    at             		    - a block with <> tags
+    ib             		    - inner block with ()
+    iB             		    - inner block with {}
+    :g/{pattern}/d 		    - delete all lines containing pattern
+    :g!/{pattern}/d		    - delete all lines not containing pattern
+    >%                      - indent a block with () or {} (cursor on brace)
+    <%                      - de-indent a block with () or {} (cursor on brace)
+    Ctrl + wT               - move the current split window into its own tab 	
+    Ctrl + o                - Retrace your movements in file in backwards
+    Ctrl + i                - Retrace your movements in file in forwards
+	'.                      - jump to last modification line
+	`.                      - jump to exact spot in last modification line
+	:Wallbuffers            - Load all buffers from all tabs to current window (:WintabsAllBuffers)
 	:Gvdiffsplit HEAD~3:%   - Brings up the staged version of the file side by side with the version 3 commits ago
 
 - Mappings for vimdiff
