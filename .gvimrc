@@ -264,12 +264,12 @@ let g:Tex_UseCiteCompletionVer2=0
 
 augroup MyIMAPs
     au!
-	au VimEnter * call IMAP('()', '(<++>)<++>', '')
-	au VimEnter * call IMAP('[]', '[<++>]<++>', '')
-	au VimEnter * call IMAP('{}', '{<++>}<++>', '')
-	au VimEnter * call IMAP('""', '"<++>"<++>', '')
-	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
-	au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
+	au VimEnter * call IMAP('()', '(<++>)', '')
+	au VimEnter * call IMAP('[]', '[<++>]', '')
+	au VimEnter * call IMAP('{}', '{<++>}', '')
+	au VimEnter * call IMAP('""', '"<++>"', '')
+	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}', '')
+	au VimEnter * call IMAP('hl', '\hl{<++>}', '')
 
 	au VimEnter * call IMAP('(((', '\left(<++>\right)<++>', 'tex')
 	au VimEnter * call IMAP('BBB', '\mathbf{<++>}<++>', 'tex')
@@ -277,6 +277,7 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('VVV', '\verb+<++>+<++>', 'tex')
 	au VimEnter * call IMAP('CCC', '\cite{<++>}<++>', 'tex')
 	au VimEnter * call IMAP('TTT', '\todo[size=\small, color=<++>!40]{<++>}<++>', 'tex')
+	au VimEnter * call IMAP('LLL', '\begin{lstlisting}[language=C++, label=lst:<++>, caption=<++>] <++> \end{lstlisting} ', 'tex')
 augroup END
 
 
