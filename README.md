@@ -151,3 +151,4 @@ Useful mappings in vim
 &nbsp;
 
 	HHH            - \href{}{<++>}
+	LLL            - \begin{lstlisting}[language=C++, label=lst:<++>, caption=<++>] <++> \end{lstlisting}
