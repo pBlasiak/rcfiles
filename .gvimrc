@@ -7,15 +7,11 @@ filetype off                  " required
  call vundle#begin()
 
  Plugin 'VundleVim/Vundle.vim'
- "Plugin 'The-NERD-tree'
  Plugin 'tpope/vim-fugitive'
  Plugin 'vim-scripts/a.vim'
  Plugin 'qpkorr/vim-bufkill'
 
- "Plugin 'vim-airline/vim-airline'
- "Plugin 'vim-airline/vim-airline-themes'
  Plugin 'micha/vim-colors-solarized'
- "Plugin 'kien/ctrlp.vim'
  Plugin 'rking/ag.vim'
  Plugin 'junegunn/fzf', { 'do': './install --all' }
  Plugin 'junegunn/fzf.vim'
@@ -27,24 +23,8 @@ filetype off                  " required
  Plugin 'ap/vim-css-color'
  Plugin 'Valloric/YouCompleteMe'
  Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
- "Plugin 'tpope/vim-commentary'
  "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
  Plugin 'chrisbra/improvedft'
- "Plugin 'spolu/dwm.vim'
- "Plugin 'zhaocai/GoldenView.Vim'
- "Plugin 'dahu/vim-fanfingtastic'
- "Plugin 'craigemery/vim-autotag'
- "Plugin 'https://bitbucket.org/shor-ty/vimextensionopenfoam/src/master/'
- "Plugin 'lervag/vim-foam'
- "Plugin 'SirVer/ultisnips'
- "Plugin 'honza/vim-snippets'
- 
- ""Plugin 'LucHermitte/lh-vim-lib'
- ""Plugin 'LucHermitte/lh-brackets'
-
- "Plugin 'statox/betterTabs.vim'
-
- "Plugin 'bkad/CamelCaseMotion'
  Plugin 'chaoren/vim-wordmotion'
 
  Plugin 'zefei/vim-wintabs'
@@ -74,12 +54,7 @@ filetype off                  " required
    filetype plugin indent on
 
 " ********** TAGS **********
-"set tags=./tags;/,tags;,~/OpenFOAM/przemek-v1612+/tags;/
-"set tags=./tags;,tags;./.tags;,.tags;,/home/przemek/OpenFOAM/przemek-v1612+/.tags
-"set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags,/home/$USER/OpenFOAM/przemek-v1612+/.tags
-"set tags=./.tags;,.tags;/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags;/home/$USER/OpenFOAM/przemek-v1612+/.tags
-set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v1612+/.tags,/home/$USER/OpenFOAM/przemek-v1612+/.tags
-
+set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v2106/.tags,/home/$USER/OpenFOAM/przemek-v2106/.tags
 
 
 " ********** BASIC SETTINGS **********
@@ -107,26 +82,10 @@ set gfn=Ubuntu\ Mono\ 13
 set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
 set showmatch
 set belloff=all "turns off the bell while tab is pressed
-"set nowrap
 set smartindent
 if &diff
 	set diffopt+=vertical
 endif
-"set splitbelow
-"set splitright
-
-" "highlights column to see how many space left
-"set colorcolumn=110
-"highlight ColorColumn ctermbg=darkgray
-"
-
-" " path option to contain a comma-separated list of directories to look for
-" " the file
-"let &path.="src/include,/usr/include,"
-"
-"   set ts=2
-"   set sw=2
-"   set expandtab
 
 " ########## MAPPINGS ##########
 
@@ -147,7 +106,6 @@ map <leader>s :source ~/.vimrc<CR>
 " ********* MAPPINGS FOR READ ONLY FILE ***********
 map <leader>n :set nomodifiable<CR>
 map <leader>m :set modifiable<CR>
-
 
 " ********* MAPPINGS FOR VIMDIFF ***********
 if &diff
@@ -179,60 +137,20 @@ map <Leader>H :set nocursorline<CR>
 
 " ########## PLUGINS SETTINGS ##########
 
-"" ********** GOLDEN-VIEW **********
-"" 1. split to tiled windows
-" nmap <silent> <C-L>  <Plug>GoldenViewSplit
-"" 2. quickly switch current window with the main pane
-"" and toggle back
-" nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-" nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-"" 3. jump to next and previous window
-" nmap <silent> <C-N>  <Plug>GoldenViewNext
-" nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-"
-"let g:goldenview__enable_at_startup = 0
-""let g:goldenview__enable_default_mapping = 0
-"let g:goldenview__ignore_urule={
-"\   'filetype' : [
-"\     ''        ,
-"\     'qf'      , 'vimpager', 'undotree', 'tagbar',
-"\     'nerdtree', 'vimshell', 'vimfiler', 'voom'  ,
-"\     'tabman'  , 'unite'   , 'quickrun', 'Decho' ,
-"\     'ControlP', 'diff'    , 'extradite'
-"\   ],
-"\   'buftype' : [
-"\     'nofile'  , 'terminal'
-"\   ],
-"\   'bufname' : [
-"\     'GoToFile'                  , 'diffpanel_\d\+'      , 
-"\     '__Gundo_Preview__'         , '__Gundo__'           , 
-"\     '\[LustyExplorer-Buffers\]' , '\-MiniBufExplorer\-' , 
-"\     '_VOOM\d\+$'                , '__Urannotate_\d\+__' , 
-"\     '__MRU_Files__' , 'FencView_\d\+$'
-"\   ],
-"\ }
-
-
-
-
 " ********** NETRW **********
 map  <F2> :Explore.<CR>
 "map  <F2> :Lexplore.<CR>
 nmap <leader>q :1wincmd c<CR>
-
 "map  <F2> :e.<CR>
 map <leader>e :Ex<CR>
 
 let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
+"let g:netrw_browse_split = 4 " open files in previous window (the current split you have beside netrw split)
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_banner = 0
 let g:netrw_use_errorwindow = 0
 autocmd FileType netrw setl bufhidden=wipe
-
-
-
 
 " ********** LATEX-SUITE **********
 map  <F6> :wall<CR> <leader>ll <leader>ls
@@ -261,7 +179,6 @@ let g:Tex_UseCiteCompletionVer2=0
 "let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
 "let g:Tex_ViewRule_pdf = 'okular --unique'
 
-
 augroup MyIMAPs
     au!
 	au VimEnter * call IMAP('()', '(<++>)', '')
@@ -280,17 +197,8 @@ augroup MyIMAPs
 	au VimEnter * call IMAP('LLL', '\begin{lstlisting}[language=C++, label=lst:<++>, caption=<++>] <++> \end{lstlisting} ', 'tex')
 augroup END
 
-
-
-
 " ********** TAGBAR **********
 nmap <F4> :TagbarToggle<CR>    
-
-"let g:tagbar_ctags_bin = '/snap/bin/ctags'
-
-
-
-
 
 " ********** YouCompleteMe **********
 nnoremap <leader>d :YcmCompleter GoTo<CR>
@@ -309,63 +217,11 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
 "button does not work
 
-
-
-
-
 " ********** BUFFERS EXPLORER **********
 nnoremap <silent> <F3> :BufExplorer<CR>
-"map  <C-k> :bn<CR>
-"map  <C-h> :bprevious<CR>
-
-
-
-
 
 " ********** BUFKILL **********
 map <C-c> :BD<cr>
-
-
-
-
-" ********** FZF **********
-"nnoremap <C-j> :FZF ~<Cr>
-"nnoremap <C-g> :Rg<Cr>
-"
-"command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
-
-
-
-
-
-" ********** CtrlP **********
-"let g:ctrlp_working_path_mode = 'rw'
-""let g:ctrlp_working_path_mode = 'ra' 
-"let g:ctrlp_max_files=0
-"let g:ctrlp_max_depth=1000
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-
-
-
-
-
-" ********** VIM-AIRLINE **********
-"let g:airline#extensions#tabline#formatter = 'unique-tail_improved'
-" Enable the list of buffers
-"let g:airline#extensions#tabline#enabled = 1
-"
-" " Show just the filename
-"let g:airline#extensions#tabline#fnamemod = ':t'
-
-
-
 
 " ********** IMPROVEDFT **********
 "let g:ft_improved_nohighlight = 1
@@ -373,44 +229,8 @@ let g:ft_improved_consistent_comma = 1
 let g:ft_improved_multichars = 1
 "let g:ft_improved_ignorecase = 1
 
-
-"" ********** ULTISNIPS **********
-"let g:UltiSnipsExpandTrigger="<space>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-
-" ********** AUTOTAG **********
-"let g:autotagTagsFile="tags"
-
-
-
-
-" ********** BUFKILL **********
-"let g:BufKillOverrideCtrlCaret
-
-
-" ********** CAMELCASEMOTION **********
-"map <silent> w <Plug>CamelCaseMotion_w
-"map <silent> b <Plug>CamelCaseMotion_b
-"map <silent> e <Plug>CamelCaseMotion_e
-"map <silent> ge <Plug>CamelCaseMotion_ge
-"sunmap w
-"sunmap b
-"sunmap e
-"sunmap ge
-"
-"imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
-"imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
-
-
 " ********** VIM-WORDMOTION **********
 let g:wordmotion_uppercase_spaces = ['_', '/', '.', ',', ';', '::', '>', '"', ']', ')', '}']
-
-" ********** LH-BRACKETS **********
-""imap <C-G>      <Plug>MarkersJumpF
-"" map <C-G>      <Plug>MarkersJumpF
-
 
 " ********** WINTABS **********
 "let g:wintabs_ui_readonly='-'
@@ -435,7 +255,3 @@ map <leader>w <Plug>(wintabs_all)
 command! Wallbufferfs WintabsAllBuffers
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
-
-" ********** RESTORE-VIM **********
-set viewoptions=cursor,folds,slash,unix
-" let g:skipview_files = ['*\.vim'] 
