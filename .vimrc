@@ -183,6 +183,23 @@ nmap <F5> :TagbarTogglePause<CR>
 let g:tagbar_sort = 0
 
 " ********** YouCompleteMe **********
+" Global variable to track status line mode
+let g:statusline_custom = 0
+
+" Toggle custom status line on and off
+function! ToggleStatusLine()
+    if g:statusline_custom
+        set statusline=
+        let g:statusline_custom = 0
+    else
+        set statusline=%{execute('YcmShowDetailedDiagnostic')}
+        let g:statusline_custom = 1
+    endif
+endfunction
+
+" Map it to a key, for example, F7
+nnoremap <F7> :call ToggleStatusLine()<CR>
+
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
@@ -191,6 +208,7 @@ nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_always_populate_location_list = 1
+let g:ycm_show_detailed_diag_in_popup=1
 "let g:ycm_complete_in_comments = 1
 "let g:ycm_show_diagnostics_ui = 0
 "let g:ycm_complete_in_comments = 1
