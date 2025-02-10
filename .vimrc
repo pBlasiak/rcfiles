@@ -89,7 +89,7 @@ nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><S-W>
 
 " ********* MAPPINGS FOR UPDATE TAGS ###########
-nmap \t :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
+nmap \tt :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
 nnoremap <C-]> g<C-]>
 nnoremap <C-LeftMouse> g<C-]>
 
@@ -101,15 +101,15 @@ map <leader>n :set nomodifiable<CR>
 map <leader>m :set modifiable<CR>
 
 " ********* MAPPINGS FOR VIMDIFF ***********
-if &diff
-	syntax off
-	map <leader>t :diffthis<CR>
-	map <leader>o :diffoff<CR>
-	map <leader>u :diffupdate<CR>
-	map <leader>gl :diffget LO<CR>
-	map <leader>gb :diffget BA<CR>
-	map <leader>gr :diffget RE<CR>
-endif
+"if &diff
+"	syntax off
+"	map <leader>t :diffthis<CR>
+"	map <leader>o :diffoff<CR>
+"	map <leader>u :diffupdate<CR>
+"	map <leader>gl :diffget LO<CR>
+"	map <leader>gb :diffget BA<CR>
+"	map <leader>gr :diffget RE<CR>
+"endif
 
 " ********* MAPPINGS FOR COPY/PASTE TO/FROM CLIPBOARD REGISTER ***********
 noremap <Leader>y "+y
@@ -120,6 +120,15 @@ map E ea
 map <Leader>g :Gvdiffsplit HEAD~1:%
 "nnoremap <leader>tm :topleft term<cr>
 nnoremap <leader>tm :rightbelow term<cr>
+
+
+" ********* SEARCH TODO ***********
+command! Todo Ag --literal "TODO"
+nnoremap <Leader>t :Ag --literal "TODO"<CR>
+
+
+
+
 
 " insert { } and enter between them
 inoremap {<CR> {<CR>}<ESC>O 
