@@ -105,6 +105,7 @@ alias of2306='source $HOME/OpenFOAM/OpenFOAM-v2306/etc/bashrc'
 alias of2312='source $HOME/OpenFOAM/OpenFOAM-v2312/etc/bashrc'
 alias of2312Debug='source ~/OpenFOAM/OpenFOAM-v2312/etc/bashrc WM_COMPILE_OPTION=Debug'
 alias of2412='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc'
+alias of2412Debug='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc WM_COMPILE_OPTION=Debug'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
