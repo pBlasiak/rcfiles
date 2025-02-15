@@ -92,18 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias B='cd ~/OpenFOAM/przemek-v1612+/applications/solvers/heatTransfer/buoyantBoussinesqSuperFluidPimpleFoam'
-alias m='cd ~/OpenFOAM/przemek-v1612+/applications/solvers/multiphase'
-alias qDebug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Debug && qtcreator&'
-
-# alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
-#alias of1912="source $HOME/OpenFOAM/OpenFOAM-v1912/etc/bashrc"
 alias of1612Prof='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Prof'
-alias of2106='source $HOME/OpenFOAM/OpenFOAM-v2106/etc/bashrc WM_LABEL_SIZE=64'
-alias of2106Debug='source ~/OpenFOAM/OpenFOAM-v2106/etc/bashrc WM_COMPILE_OPTION=Debug'
-alias of2306='source $HOME/OpenFOAM/OpenFOAM-v2306/etc/bashrc'
-alias of2312='source $HOME/OpenFOAM/OpenFOAM-v2312/etc/bashrc'
-alias of2312Debug='source ~/OpenFOAM/OpenFOAM-v2312/etc/bashrc WM_COMPILE_OPTION=Debug'
 alias of2412='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc'
 alias of2412Debug='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc WM_COMPILE_OPTION=Debug'
 
@@ -137,19 +126,9 @@ set-title(){
     TITLE="\e]2;$@\a"
 	  PS1=${ORIG}${TITLE}
   }
-alias of240='source $HOME/OpenFOAM/OpenFOAM-2.4.0/etc/bashrc WM_NCOMPPROCS=4'
-alias of220='source $HOME/OpenFOAM/OpenFOAM-2.2.0/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI'
-alias of301='source $HOME/OpenFOAM/OpenFOAM-3.0.1/etc/bashrc WM_LABEL_SIZE=64'
-alias of7='source /opt/openfoam7/etc/bashrc'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
-alias of222='source $HOME/OpenFOAM/OpenFOAM-2.2.2/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI'
-alias of90='source /opt/openfoam9/etc/bashrc'
-alias H='cd /home/przemek/OpenFOAM/przemek-v2106/run/tutorialsPB/multiphase/H'
 export PATH=/opt/ParaView-5.9.0-MPI-Linux-Python3.7-64bit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 export PATH=$HOME/doxygen-1.9.1/bin:$PATH
-alias of1812='source $HOME/OpenFOAM/OpenFOAM-v1812/etc/bashrc WM_LABEL_SIZE=64'
-alias of1912='source $HOME/OpenFOAM/OpenFOAM-v1912/etc/bashrc WM_LABEL_SIZE=64'
-alias fe40='source $HOME/foam/foam-extend-4.0/etc/bashrc'
 
 export PATH="/usr/local/bin:$PATH"
