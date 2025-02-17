@@ -132,3 +132,4 @@ export PATH=/opt/ParaView-5.9.0-MPI-Linux-Python3.7-64bit/bin:/usr/local/sbin:/u
 export PATH=$HOME/doxygen-1.9.1/bin:$PATH
 
 export PATH="/usr/local/bin:$PATH"
+export PATH=/usr/local/python2/bin:$PATH
