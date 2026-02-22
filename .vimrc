@@ -61,12 +61,16 @@ set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v2106/.tags,/home/$USER/Ope
 set mouse=a
 set hidden
 set autoread
-set autoindent
+"set autoindent
 set backspace=indent,eol,start
+"set tabstop=4
+"set softtabstop=4
+"set shiftwidth=4
+"set noexpandtab
+set expandtab
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set autoindent
 set hlsearch
 set path+=.
 set nocp
@@ -122,26 +126,9 @@ map <Leader>g :Gvdiffsplit HEAD~1:%
 nnoremap <leader>tm :rightbelow term<cr>
 
 
-"" ********* SEARCH TODO ***********
-"command! Todo Ag --literal "TODO"
-"nnoremap <Leader>t :Ag --literal "TODO"<CR>
-augroup highlight_todos
-  autocmd!
-  autocmd Syntax * call matchadd('Todo', '\<\(TODO\|FIXME\|NOTE\|BUG\|HACK\|OPTIMIZE\|OPTIMISE\|REVIEW\|WARNING\|CAUTION\|QUESTION\|IDEA\|DEPRECATED\|REMOVE\|PENDING\|TEMP\|WORKAROUND\|QUICKFIX\|ISSUE\|BLOCKER\|SECURITY\|PERFORMANCE\|MEMORY\|CLEANUP\|VERIFY\|TESTME\|DISCUSS\|LATER\|ASAP\)\>')
-augroup END
-
-" ********* SEARCH TODO and related tags ***********
-let g:TodoTags = '\\b(TODO|FIXME|NOTE|BUG|HACK|OPTIMIZE|OPTIMISE|REVIEW|WARNING|CAUTION|QUESTION|IDEA|DEPRECATED|REMOVE|PENDING|TEMP|WORKAROUND|QUICKFIX|ISSUE|BLOCKER|SECURITY|PERFORMANCE|MEMORY|CLEANUP|VERIFY|TESTME|DISCUSS|LATER|ASAP)\\b'
-"let g:TodoTags = '\b(TODO|FIXME|NOTE|BUG|HACK|OPTIMIZE|OPTIMISE|REVIEW|WARNING|CAUTION|QUESTION|IDEA|DEPRECATED|REMOVE|PENDING|TEMP|WORKAROUND|QUICKFIX|ISSUE|BLOCKER|SECURITY|PERFORMANCE|MEMORY|CLEANUP|VERIFY|TESTME|DISCUSS|LATER|ASAP)\b'
-
-command! Todo execute 'Ag --ignore LICENSE --ignore COPYING "' . g:TodoTags . '"'
-nnoremap <Leader>t :execute 'Ag --ignore LICENSE --ignore COPYING "' . g:TodoTags . '"'<CR>
-
-command! ListTodoTags echo join(split(g:TodoTags, '|'), "\n")
-nnoremap <Leader>tt :ListTodoTags<CR>
-
-
-
+" ********* SEARCH TODO ***********
+command! Todo Ag --literal "TODO"
+nnoremap <Leader>t :Ag --literal "TODO"<CR>
 
 
 
@@ -286,6 +273,3 @@ map <leader>w <Plug>(wintabs_all)
 command! Wallbufferfs WintabsAllBuffers
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
-
-
-
