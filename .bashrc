@@ -92,9 +92,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias B='cd ~/OpenFOAM/przemek-v1612+/applications/solvers/heatTransfer/buoyantBoussinesqSuperFluidPimpleFoam'
+alias m='cd ~/OpenFOAM/przemek-v1612+/applications/solvers/multiphase'
+alias qDebug='source ~/OpenFOAM/OpenFOAM-v1606+/etc/bashrc WM_COMPILE_OPTION=Debug && qtcreator&'
+
+# alias of1612='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc'
+#alias of1912="source $HOME/OpenFOAM/OpenFOAM-v1912/etc/bashrc"
 alias of1612Prof='source ~/OpenFOAM/OpenFOAM-v1612+/etc/bashrc WM_COMPILE_OPTION=Prof'
-alias of2412='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc'
-alias of2412Debug='source $HOME/OpenFOAM/OpenFOAM-v2412/etc/bashrc WM_COMPILE_OPTION=Debug'
+alias of2512='source $HOME/OpenFOAM/OpenFOAM-v2512/etc/bashrc'
+alias of2512Debug='source ~/OpenFOAM/OpenFOAM-v2512/etc/bashrc WM_COMPILE_OPTION=Debug'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -128,8 +134,5 @@ set-title(){
   }
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
-export PATH=/opt/ParaView-5.9.0-MPI-Linux-Python3.7-64bit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-export PATH=$HOME/doxygen-1.9.1/bin:$PATH
 
 export PATH="/usr/local/bin:$PATH"
-export PATH=/usr/local/python2/bin:$PATH
