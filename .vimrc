@@ -205,6 +205,7 @@ let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_quickfix_mode = 0
 
 "let g:vimtex_view_forward_search_on_start = 0
+nmap <buffer> gd <plug>(vimtex-gd)
 
 " ---------- LATEX-SUITE IMAPS ----------
 
