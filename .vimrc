@@ -1,260 +1,316 @@
+if has('clientserver') && empty(v:servername)
+  call remote_startserver('VIM')
+endif
+
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" ********** VUNDLE BEGIN **********
- set rtp+=~/.vim/bundle/Vundle.vim
- set rtp+=~/.fzf
- call vundle#begin()
+" ============================================================
+" VIM-PLUG
+" ============================================================
 
- Plugin 'VundleVim/Vundle.vim'
- Plugin 'tpope/vim-fugitive'
- Plugin 'vim-scripts/a.vim'
- Plugin 'qpkorr/vim-bufkill'
+call plug#begin('~/.vim/plugged')
 
- Plugin 'micha/vim-colors-solarized'
- Plugin 'rking/ag.vim'
- Plugin 'junegunn/fzf', { 'do': './install --all' }
- Plugin 'junegunn/fzf.vim'
- Plugin 'jlanzarotta/bufexplorer'
- Plugin 'majutsushi/tagbar'
- Plugin 'gerw/vim-latex-suite'
- Plugin 'gerw/vim-tex-syntax'
- Plugin 'octol/vim-cpp-enhanced-highlight'
- Plugin 'ap/vim-css-color'
- Plugin 'Valloric/YouCompleteMe'
- Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
- "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
- Plugin 'chrisbra/improvedft'
- Plugin 'chaoren/vim-wordmotion'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/a.vim'
+Plug 'qpkorr/vim-bufkill'
 
- Plugin 'zefei/vim-wintabs'
- Plugin 'zefei/vim-wintabs-powerline'
- "Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
+Plug 'micha/vim-colors-solarized'
+Plug 'rking/ag.vim'
 
-" ********** VUNDLE END **********
-" All of your Plugins must be added before the following line
- call vundle#end()            " required
- filetype plugin indent on    " required
-" " To ignore plugin indent changes, instead use:
-" "filetype plugin on
-" "
-" " Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " Put your non-Plugin stuff after this line
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-   
-   syntax on
-   filetype plugin indent on
+Plug 'jlanzarotta/bufexplorer'
+Plug 'majutsushi/tagbar'
 
-" ********** TAGS **********
+" LaTeX -- KEEP FOR NOW
+Plug 'lervag/vimtex'
+
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ap/vim-css-color'
+
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+"Plugin 'Townk/vim-autoclose' " it turns off latex-suite
+
+Plug 'chrisbra/improvedft'
+Plug 'chaoren/vim-wordmotion'
+
+Plug 'zefei/vim-wintabs'
+Plug 'zefei/vim-wintabs-powerline'
+
+"Plugin 'restore_view.vim' " causes clash with ctrl+h shortcut
+
+call plug#end()
+
+syntax on
+filetype plugin indent on
+
+" ============================================================
+" TAGS
+" ============================================================
+
 set tags=./.tags,.tags,/home/$USER/OpenFOAM/OpenFOAM-v2106/.tags,/home/$USER/OpenFOAM/przemek-v2106/.tags
 
+" ============================================================
+" BASIC SETTINGS
+" ============================================================
 
-" ********** BASIC SETTINGS **********
+" Ścieżka do SumatraPDF w Windowsie (wybierz właściwą wersję instalacji):
+let g:vimtex_view_general_viewer = '/mnt/c/Users/pblasiak/AppData/Local/SumatraPDF/SumatraPDF.exe'
+" Lub jeśli instalowano dla wszystkich użytkowników:
+" let g:vimtex_view_general_viewer = '/mnt/c/Program Files/SumatraPDF/SumatraPDF.exe'
+
+let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
+
 set mouse=a
 set hidden
 set autoread
 "set autoindent
 set backspace=indent,eol,start
+
 "set tabstop=4
 "set softtabstop=4
 "set shiftwidth=4
 "set noexpandtab
+
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
+
 set hlsearch
 set path+=.
 set nocp
 set number
+
+" GUI setting -- harmless in terminal Vim
 set gfn=Ubuntu\ Mono\ 12
-set timeoutlen=450 " Time to wait after ESC (default causes an annoying delay)
+
+set timeoutlen=450
 set showmatch
-set belloff=all "turns off the bell while tab is pressed
+set belloff=all
 set smartindent
+
 if &diff
-	set diffopt+=vertical
+set diffopt+=vertical
 endif
 
-" ########## MAPPINGS ##########
+" ============================================================
+" MAPPINGS
+" ============================================================
 
-" ********* MAPPINGS FOR WINDOWS ###########
+" ---------- MAPPINGS FOR WINDOWS ----------
+
 nmap <silent> <C-L> :vs<CR><C-W><C-W>
 nmap <silent> <C-M> :sp<CR><C-W><C-W>
 nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><S-W>
+"nmap <leader>v :vs
+"nmap <leader>s :sp
+"nmap <leader>h :hide
+"nmap <leader>q :q
 
-" ********* MAPPINGS FOR UPDATE TAGS ###########
-nmap \tt :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
+" ---------- MAPPINGS FOR UPDATE TAGS ----------
+
+nmap <leader>tt :!(cd %:p:h; ctags --c++-kinds=+p --language-force=C++ --extra=+qf --fields=+iaS --exclude=**/.git/** --exclude=**/bin/** --exclude=**/platforms/** --exclude=**/build/** --exclude=**/doc/** --exclude=**/etc/** --exclude=**/modules/** --exclude=ThirdParty --exclude=**/tutorials/** --exclude=**/wmake/** -f .tags *.[CH])&
+
 nnoremap <C-]> g<C-]>
-nnoremap <C-LeftMouse> g<C-]>
+nnoremap <leader>] g<C-]>
 
-" ********* MAPPINGS FOR LOAD VIMRC ***********
-map <leader>s :source ~/.vimrc<CR>
+" ---------- LOAD VIMRC ----------
 
-" ********* MAPPINGS FOR READ ONLY FILE ***********
-map <leader>n :set nomodifiable<CR>
-map <leader>m :set modifiable<CR>
+map <leader>s :source ~/.vimrc
 
-" ********* MAPPINGS FOR VIMDIFF ***********
+" ---------- READ ONLY FILE ----------
+
+map <leader>n :set nomodifiable
+map <leader>m :set modifiable
+
+" ---------- VIMDIFF ----------
+
 "if &diff
-"	syntax off
-"	map <leader>t :diffthis<CR>
-"	map <leader>o :diffoff<CR>
-"	map <leader>u :diffupdate<CR>
-"	map <leader>gl :diffget LO<CR>
-"	map <leader>gb :diffget BA<CR>
-"	map <leader>gr :diffget RE<CR>
+"    syntax off
+"    map <leader>t :diffthis
+"    map <leader>o :diffoff
+"    map <leader>u :diffupdate
+"    map <leader>gl :diffget LO
+"    map <leader>gb :diffget BA
+"    map <leader>gr :diffget RE
 "endif
 
-" ********* MAPPINGS FOR COPY/PASTE TO/FROM CLIPBOARD REGISTER ***********
-noremap <Leader>y "+y
-noremap <Leader>p "+p
 
-" ********* OTHER MAPPINGS ***********
+" ---------- OTHER MAPPINGS ----------
+
 map E ea
-map <Leader>g :Gvdiffsplit HEAD~1:%
-"nnoremap <leader>tm :topleft term<cr>
-nnoremap <leader>tm :rightbelow term<cr>
+map <leader>g :Gvdiffsplit HEAD~1:%
 
+"nnoremap tm :topleft term
+nnoremap tm :rightbelow term
 
-" ********* SEARCH TODO ***********
+" ---------- SEARCH TODO ----------
+
 command! Todo Ag --literal "TODO"
-nnoremap <Leader>t :Ag --literal "TODO"<CR>
+nnoremap <leader>t :Ag --literal "TODO"
 
+" ---------- INSERT {} AND ENTER ----------
 
+inoremap { {}O
 
+" ---------- INSERT () AND ENTER ----------
 
+inoremap ( ()O
 
-" insert { } and enter between them
-inoremap {<CR> {<CR>}<ESC>O 
+" ---------- CURSORLINE ----------
 
-" insert ( ) and enter between them
-inoremap (<CR> (<CR>)<ESC>O <space><space><space><space>
+map <leader>h :set cursorline <Bar> :highlight CursorLine guibg=lightblue ctermbg=lightgrey
+map <leader>H :set nocursorline
 
-" highlights the line with the cursor
-map <Leader>h :set cursorline<CR> & :highlight CursorLine guibg=lightblue ctermbg=lightgrey<CR>
-map <Leader>H :set nocursorline<CR>
+" ============================================================
+" NETRW
+" ============================================================
 
-" ########## PLUGINS SETTINGS ##########
-
-" ********** NETRW **********
 map  <F2> :Explore.<CR>
 "map  <F2> :Lexplore.<CR>
 nmap <leader>q :1wincmd c<CR>
 "map  <F2> :e.<CR>
 map <leader>e :Ex<CR>
+"map <leader>e :Explore.
+"nmap q :1wincmd c
+"map e :Ex
 
 let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4 " open files in previous window (the current split you have beside netrw split)
+"let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_banner = 0
 let g:netrw_use_errorwindow = 0
+
 autocmd FileType netrw setl bufhidden=wipe
 
-" ********** LATEX-SUITE **********
-map  <F6> :wall<CR> <leader>ll <leader>ls
+" ============================================================
+" VIMTEX
+" ============================================================
 
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" " search in a singe file. This will confuse Latex-Suite. Set your grep
-" " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
+let g:tex_flavor = 'latex'
 
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-"let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
+let g:vimtex_compiler_method = 'latexmk'
 
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf = 'okular --unique'
+"let g:vimtex_view_method = 'zathura'
 
-augroup MyIMAPs
-    au!
-	au VimEnter * call IMAP('()', '(<++>)<++>', '')
-	au VimEnter * call IMAP('[]', '[<++>]<++>', '')
-	au VimEnter * call IMAP('{}', '{<++>}<++>', '')
-	au VimEnter * call IMAP('""', '"<++>"<++>', '')
-	au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
-	au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
-	au VimEnter * call IMAP('<>', '<<++>><++>', '')
-augroup END
+let g:vimtex_quickfix_mode = 0
 
-" ********** TAGBAR **********
+"let g:vimtex_view_forward_search_on_start = 0
+
+" ---------- LATEX-SUITE IMAPS ----------
+
+"augroup MyIMAPs
+"au!
+"
+"au VimEnter * call IMAP('()', '(<++>)<++>', '')
+"au VimEnter * call IMAP('[]', '[<++>]<++>', '')
+"au VimEnter * call IMAP('{}', '{<++>}<++>', '')
+"au VimEnter * call IMAP('""', '"<++>"<++>', '')
+"au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
+"au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
+"au VimEnter * call IMAP('<>', '<<++>><++>', '')
+"
+"augroup END
+
+" ============================================================
+" TAGBAR
+" ============================================================
+
 nmap <F4> :TagbarToggle<CR>    
 nmap <F5> :TagbarTogglePause<CR>    
+"nmap <leader>tb :TagbarToggle
+"nmap <leader>tp :TagbarTogglePause
 
 let g:tagbar_sort = 0
 
-" ********** YouCompleteMe **********
-" Global variable to track status line mode
+" ============================================================
+" YOUCOMPLETEME
+" ============================================================
+
 let g:statusline_custom = 0
 
-" Toggle custom status line on and off
 function! ToggleStatusLine()
-    if g:statusline_custom
-        set statusline=
-        let g:statusline_custom = 0
-    else
-        set statusline=%{execute('YcmShowDetailedDiagnostic')}
-        let g:statusline_custom = 1
-    endif
+if g:statusline_custom
+set statusline=
+let g:statusline_custom = 0
+else
+set statusline=%{execute('YcmShowDetailedDiagnostic')}
+let g:statusline_custom = 1
+endif
 endfunction
 
 " Map it to a key, for example, F7
-nnoremap <F7> :call ToggleStatusLine()<CR>
+nnoremap <F7> :call ToggleStatusLine()
 
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 "let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1 
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_show_detailed_diag_in_popup=1
+
 "let g:ycm_complete_in_comments = 1
 "let g:ycm_show_diagnostics_ui = 0
 "let g:ycm_complete_in_comments = 1
 "let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "let g:ycm_enable_diagnostic_signs = 0
 "let g:ycm_enable_diagnostic_highlighting = 0
-"let g:ycm_key_list_stop_completion = ['<Esc>'] " <Esc> is used the Delete
-"button does not work
+"let g:ycm_key_list_stop_completion = ['']
 
-" ********** BUFFERS EXPLORER **********
+" ============================================================
+" BUFFER EXPLORER
+" ============================================================
+
 nnoremap <silent> <F3> :BufExplorer<CR>
+"nnoremap <leader>be :BufExplorer
 
-" ********** BUFKILL **********
+" ============================================================
+" BUFKILL
+" ============================================================
+
 map <C-c> :BD<cr>
+"map <leader>bd :BD
 
-" ********** FZF **********
-"nnoremap <C-j> :FZF ~<Cr>
-"nnoremap <C-g> :Rg<Cr>
+" ============================================================
+" FZF
+" ============================================================
 
-" ********** IMPROVEDFT **********
+"nnoremap <leader>f :FZF ~
+"nnoremap <leader>r :Rg
+
+" ============================================================
+" IMPROVEDFT
+" ============================================================
+
 "let g:ft_improved_nohighlight = 1
 let g:ft_improved_consistent_comma = 1
 let g:ft_improved_multichars = 1
 "let g:ft_improved_ignorecase = 1
 
-" ********** VIM-WORDMOTION **********
+" ============================================================
+" VIM-WORDMOTION
+" ============================================================
+
 let g:wordmotion_uppercase_spaces = ['_', '/', '.', ',', ';', '::', '>', '"', '[', ']', '(', ')', '{', '}']
 
-" ********** WINTABS **********
+" ============================================================
+" WINTABS
+" ============================================================
+
 "let g:wintabs_ui_readonly='-'
 "let g:wintabs_ui_sep_leftmost=''
 "let g:wintabs_ui_sep_inbetween='|'
 "let g:wintabs_ui_sep_rightmost='|'
+
 map <C-H> <Plug>(wintabs_previous)
 map <C-K> <Plug>(wintabs_next)
 " close current buffer (like Ctrl+C)
