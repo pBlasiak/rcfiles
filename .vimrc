@@ -30,7 +30,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ap/vim-css-color'
 
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" niepotrzebne bo lepiej kompilowac
+" z bear i tworzyc plik compile_commands.json
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 "Plugin 'Townk/vim-autoclose' " it turns off latex-suite
 
