@@ -251,9 +251,9 @@ endfunction
 " Map it to a key, for example, F7
 nnoremap <F7> :call ToggleStatusLine()
 
-nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>d :YcmCompleter GoTo<CR>
+"nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 "let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
