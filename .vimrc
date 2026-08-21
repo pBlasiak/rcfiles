@@ -157,13 +157,6 @@ nnoremap tm :rightbelow term
 command! Todo Ag --literal "TODO"
 nnoremap <leader>t :Ag --literal "TODO"
 
-" ---------- INSERT {} AND ENTER ----------
-
-inoremap { {}O
-
-" ---------- INSERT () AND ENTER ----------
-
-inoremap ( ()O
 
 " ---------- CURSORLINE ----------
 
@@ -333,3 +326,11 @@ map <leader>w <Plug>(wintabs_all)
 command! Wallbufferfs WintabsAllBuffers
 command! Tabc WintabsCloseVimtab
 command! Tabo WintabsOnlyVimtab
+
+
+
+
+" ---------- INSERT {} or () AND ENTER ----------
+
+autocmd FileType c,cpp inoremap <buffer><expr> <CR> (col('.') > 1 && getline('.')[col('.')-2] == '{') ? "\<CR>}\<Esc>O" : (col('.') > 1 && getline('.')[col('.')-2] == '(') ? "\<CR>)\<Esc>O\<C-t>" : "\<CR>"
+"autocmd FileType c,cpp inoremap <buffer><expr> <CR> (col('.') > 1 && getline('.')[col('.')-2] == '{') ? "\<CR>}\<Esc>O" : (col('.') > 1 && getline('.')[col('.')-2] == '(') ? "\<CR>)\<Esc>O" : "\<CR>"
