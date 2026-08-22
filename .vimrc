@@ -200,19 +200,34 @@ let g:vimtex_quickfix_mode = 0
 "let g:vimtex_view_forward_search_on_start = 0
 nmap <buffer> gd <plug>(vimtex-gd)
 
-" ---------- LATEX-SUITE IMAPS ----------
+" ---------- SKRÓTY LATEX (Zamiennik dla LaTeX-Suite) ----------
+" Funkcja przeskakująca do kolejnego <++>, usuwająca go i przechodząca w tryb Insert
+function! TexJumpPlaceholder()
+  if search('<++>', 'W')
+    execute "normal! \"_d4l"
+    startinsert
+  endif
+endfunction
 
-"augroup MyIMAPs
-"au!
+" ---------- SKRÓTY LATEX ----------
+autocmd BufRead,BufNewFile *.tex inoremap <buffer> "" ""<Left>
+" Wstawianie []<++> z kursorem w środku nawiasu
+autocmd BufRead,BufNewFile *.tex inoremap <buffer> [ []<++><Esc>F[a
+
+" Skok pod Ctrl+j do najbliższego <++> i jego usunięcie
+autocmd BufRead,BufNewFile *.tex inoremap <buffer> <C-j> <Esc>/<++><CR>"_c4l
+"augroup TexIMAPs
+"  autocmd!
+"  autocmd FileType tex,plaintex inoremap <buffer> () (<++>)<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> [] [<++>]<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> {} {<++>}<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> "" "<++>"<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> HHH \href{<++>}{<++>}<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> hl \hl{<++>}<++>
+"  autocmd FileType tex,plaintex inoremap <buffer> <> <<++>><++>
 "
-"au VimEnter * call IMAP('()', '(<++>)<++>', '')
-"au VimEnter * call IMAP('[]', '[<++>]<++>', '')
-"au VimEnter * call IMAP('{}', '{<++>}<++>', '')
-"au VimEnter * call IMAP('""', '"<++>"<++>', '')
-"au VimEnter * call IMAP('HHH', '\href{<++>}{<++>}<++>', '')
-"au VimEnter * call IMAP('hl', '\hl{<++>}<++>', '')
-"au VimEnter * call IMAP('<>', '<<++>><++>', '')
-"
+"  " Skok i usunięcie znacznika pod Ctrl + j
+"  autocmd FileType tex,plaintex inoremap <buffer> <C-j> <Esc>:call TexJumpPlaceholder()<CR>
 "augroup END
 
 " ============================================================
