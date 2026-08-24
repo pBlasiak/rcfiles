@@ -344,8 +344,32 @@ command! Tabo WintabsOnlyVimtab
 
 
 
+" Poprawiona funkcja CleverCR z auto-wyrównaniem dla ()
+function! CleverCR()
+  let l:before = col('.') > 1 ? getline('.')[col('.')-2] : ''
+  let l:after  = getline('.')[col('.')-1]
 
-" ---------- INSERT {} or () AND ENTER ----------
+  if l:before == '{' && l:after == '}'
+    return "\<CR>\<Esc>O"
+  elseif l:before == '(' && l:after == ')'
+    return "\<CR>\<Esc>==O"
+  else
+    return "\<CR>"
+  endif
+endfunction
 
-autocmd FileType c,cpp inoremap <buffer><expr> <CR> (col('.') > 1 && getline('.')[col('.')-2] == '{') ? "\<CR>}\<Esc>O" : (col('.') > 1 && getline('.')[col('.')-2] == '(') ? "\<CR>)\<Esc>O\<C-t>" : "\<CR>"
-"autocmd FileType c,cpp inoremap <buffer><expr> <CR> (col('.') > 1 && getline('.')[col('.')-2] == '{') ? "\<CR>}\<Esc>O" : (col('.') > 1 && getline('.')[col('.')-2] == '(') ? "\<CR>)\<Esc>O" : "\<CR>"
+" ---------- AUTOMATYCZNE NAWIASY I CUDZYSŁOWY ZE ZNACZNIKIEM <++> ----------
+augroup AutoBrackets
+  autocmd!
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> ( ()<++><Left><Left><Left><Left><Left>
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> { {}<++><Left><Left><Left><Left><Left>
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> [ []<++><Left><Left><Left><Left><Left>
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> < <><++><Left><Left><Left><Left><Left>
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> <char-34> ""<++><Left><Left><Left><Left><Left>
+
+  " Inteligentny Enter rozwijający bloki
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer><expr> <CR> CleverCR()
+
+  " Skok do kolejnego znacznika <++> i usunięcie go za pomocą Ctrl + j
+  autocmd BufRead,BufNewFile *.tex,*.c,*.cpp,*.h,*.hpp,*.C,*.H inoremap <buffer> <C-j> <Esc>/<++><CR>:noh<CR>"_c4l
+augroup END
