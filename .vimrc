@@ -67,10 +67,13 @@ let g:vimtex_view_general_viewer = '/mnt/c/Users/pblasiak/AppData/Local/SumatraP
 
 let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 
+" Schowek systemowy 
+" wymagana kompilacja vim z +clipboard
+set clipboard=unnamedplus
+
 set mouse=a
 set hidden
 set autoread
-"set autoindent
 set backspace=indent,eol,start
 
 "set tabstop=4
@@ -110,10 +113,6 @@ nmap <silent> <C-L> :vs<CR><C-W><C-W>
 nmap <silent> <C-M> :sp<CR><C-W><C-W>
 nmap <silent> <C-N> <C-W><C-W>
 nmap <silent> <C-P> <C-W><S-W>
-"nmap <leader>v :vs
-"nmap <leader>s :sp
-"nmap <leader>h :hide
-"nmap <leader>q :q
 
 " ---------- MAPPINGS FOR UPDATE TAGS ----------
 
@@ -124,7 +123,7 @@ nnoremap <leader>] g<C-]>
 
 " ---------- LOAD VIMRC ----------
 
-map <leader>s :source ~/.vimrc
+map <leader>s :source ~/.vimrc<CR>
 
 " ---------- READ ONLY FILE ----------
 
@@ -145,6 +144,33 @@ map <leader>m :set modifiable
 
 
 " ---------- OTHER MAPPINGS ----------
+
+""<++>nnoremap <Leader>r :browse oldfiles<CR>
+" ---------- HISTORIA PLIKÓW (QUICKFIX) ----------
+function! ShowOldfilesQF()
+  let l:list = []
+  for f in v:oldfiles
+    call add(l:list, {'filename': f})
+  endfor
+  call setqflist(l:list)
+  copen
+endfunction
+
+function! OpenQfFile()
+  let l:idx = line('.') - 1
+  if exists('v:oldfiles') && l:idx >= 0 && l:idx < len(v:oldfiles)
+    let l:file = v:oldfiles[l:idx]
+    cclose
+    execute 'edit ' . fnameescape(expand(l:file))
+  endif
+endfunction
+
+" Skrót wywołujący historię (np. Spacja + r lub \r)
+nnoremap <Leader>r :call ShowOldfilesQF()<CR>
+
+" Mapowanie Entera i dwukliku myszy w oknie Quickfix
+autocmd FileType qf nnoremap <buffer> <silent> <CR> :call OpenQfFile()<CR>
+autocmd FileType qf nnoremap <buffer> <silent> <2-LeftMouse> :call OpenQfFile()<CR>
 
 map E ea
 map <leader>g :Gvdiffsplit HEAD~1:%
@@ -188,6 +214,8 @@ autocmd FileType netrw setl bufhidden=wipe
 " ============================================================
 " VIMTEX
 " ============================================================
+" DODANE 30.08.2026 (nie komitowane)
+map  <F6> :wall<CR> <leader>ll <leader>lv
 
 let g:tex_flavor = 'latex'
 
@@ -258,7 +286,7 @@ endif
 endfunction
 
 " Map it to a key, for example, F7
-nnoremap <F7> :call ToggleStatusLine()
+" nnoremap <F7> :call ToggleStatusLine()
 
 "nnoremap <leader>d :YcmCompleter GoTo<CR>
 "nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
@@ -353,8 +381,10 @@ function! CleverCR()
   let l:before = col('.') > 1 ? getline('.')[col('.')-2] : ''
   let l:after  = getline('.')[col('.')-1]
 
-  if (l:before == '{' && l:after == '}') || (l:before == '(' && l:after == ')') || (l:before == '[' && l:after == ']')
+  if l:before == '{' && l:after == '}'
     return "\<CR>\<Esc>O"
+  elseif (l:before == '(' && l:after == ')') || (l:before == '[' && l:after == ']')
+    return "\<CR>\<C-d>\<Esc>O"
   else
     return "\<CR>"
   endif
@@ -372,3 +402,27 @@ inoremap <expr> <CR> CleverCR()
 
 " Skok do kolejnego znacznika <++> pod Ctrl + j w każdym pliku
 inoremap <C-j> <Esc>/<++><CR>:noh<CR>"_c4l
+
+" Szybkie środowiska LaTeXa (kompatybilne ze skokiem <C-j>)
+autocmd FileType tex inoremap <buffer> EEQ \begin{equation}<CR><++><CR>\end{equation}<CR><++><Esc>2kO
+autocmd FileType tex inoremap <buffer> EIT \begin{itemize}<CR>\item <++><CR>\end{itemize}<CR><++><Esc>2kf<i
+autocmd FileType tex inoremap <buffer> EEN \begin{enumerate}<CR>\item <++><CR>\end{enumerate}<CR><++><Esc>2kf<i
+autocmd FileType tex inoremap <buffer> EFI \begin{figure}[htbp]<CR>\centering<CR>\includegraphics[width=0.8\textwidth]{<++>}<CR>\caption{<++>}<CR>\label{fig:<++>}<CR>\end{figure}<CR><++><Esc>5kf{a
+
+" ---------- DODATKOWE SKRÓTY LATEX (Zamienniki dla IMAP) ----------
+autocmd FileType tex inoremap <buffer> hhh \hl{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> HHH \href{<++>}{<++>}<++><Esc>2F{a
+autocmd FileType tex inoremap <buffer> CCC \cite{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> VVV \verb<bar><++><bar><++><Esc>2F<bar>a
+autocmd FileType tex inoremap <buffer> ((( \left(<++>\right)<++><Esc>F(a
+autocmd FileType tex inoremap <buffer> BBB \mathbf{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> RRR \mathrm{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> TTT \todo[size=\small, color=<++>!40]{<++>}<++><Esc>F=a
+autocmd FileType tex inoremap <buffer> LLL \begin{lstlisting}[language=C++, label=lst:<++>, caption=<++>]<CR><++><CR>\end{lstlisting}<++><Esc>2kf:a
+autocmd FileType tex inoremap <buffer> $$ $$<++><Left><Left><Left><Left><Left>
+" ---------- KONTROLKI STRUKTURY I SYMBOLE (LaTeX) ----------
+autocmd FileType tex inoremap <buffer> SEC \section{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> SSS \subsection{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> SCH \chapter{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> `6 \partial{<++>}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> `/  \frac{<++>}{<++>}<++><Esc>2F{a
