@@ -402,7 +402,8 @@ inoremap <expr> <CR> CleverCR()
 
 " Skok do kolejnego znacznika <++> pod Ctrl + j w każdym pliku
 ""<++>inoremap <C-j> <Esc>/<++><CR>:noh<CR>"_c4l
-nnoremap <silent> <C-j> /<++><CR>:nohlsearch<CR>c4l
+ nnoremap <silent> <C-j> /<++><CR>:nohlsearch<CR>c4l
+ inoremap <silent> <C-j> <C-o>/<++><CR><C-o>:nohlsearch<CR><C-o>"_d4l
 
 " Szybkie środowiska LaTeXa (kompatybilne ze skokiem <C-j>)
 autocmd FileType tex inoremap <buffer> EEQ \begin{equation}<CR><++><CR>\end{equation}<CR><++><Esc>2kO
