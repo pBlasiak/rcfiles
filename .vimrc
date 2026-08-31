@@ -410,19 +410,20 @@ autocmd FileType tex inoremap <buffer> EEN \begin{enumerate}<CR>\item <++><CR>\e
 autocmd FileType tex inoremap <buffer> EFI \begin{figure}[htbp]<CR>\centering<CR>\includegraphics[width=0.8\textwidth]{<++>}<CR>\caption{<++>}<CR>\label{fig:<++>}<CR>\end{figure}<CR><++><Esc>5kf{a
 
 " ---------- DODATKOWE SKRÓTY LATEX (Zamienniki dla IMAP) ----------
-autocmd FileType tex inoremap <buffer> hhh \hl{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> HHH \href{<++>}{<++>}<++><Esc>2F{a
-autocmd FileType tex inoremap <buffer> CCC \cite{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> VVV \verb<bar><++><bar><++><Esc>2F<bar>a
-autocmd FileType tex inoremap <buffer> ((( \left(<++>\right)<++><Esc>F(a
-autocmd FileType tex inoremap <buffer> BBB \mathbf{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> RRR \mathrm{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> TTT \todo[size=\small, color=<++>!40]{<++>}<++><Esc>F=a
-autocmd FileType tex inoremap <buffer> LLL \begin{lstlisting}[language=C++, label=lst:<++>, caption=<++>]<CR><++><CR>\end{lstlisting}<++><Esc>2kf:a
+autocmd FileType tex inoremap <buffer> hhh \hl{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> HHH \href{}{<++>}<++><Esc>2F{a
+autocmd FileType tex inoremap <buffer> CCC \cite{}<++><Esc>F{a
+""<++>autocmd FileType tex inoremap <buffer> VVV \verb<bar><++><bar><++><Esc>2F<bar>a
+autocmd FileType tex inoremap <buffer> VVV \verb<bar><bar><++><Esc>2F<bar>a
+autocmd FileType tex inoremap <buffer> ((( \left(\right)<++><Esc>F(a
+autocmd FileType tex inoremap <buffer> BBB \mathbf{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> RRR \mathrm{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> TTT \todo[size=\small, color=!40]{<++>}<++><Esc>F=a
+autocmd FileType tex inoremap <buffer> LLL \begin{lstlisting}[language=C++, label=lst:, caption=<++>]<CR><++><CR>\end{lstlisting}<++><Esc>2kf:a
 autocmd FileType tex inoremap <buffer> $$ $$<++><Left><Left><Left><Left><Left>
 " ---------- KONTROLKI STRUKTURY I SYMBOLE (LaTeX) ----------
-autocmd FileType tex inoremap <buffer> SEC \section{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> SSS \subsection{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> SCH \chapter{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> `6 \partial{<++>}<++><Esc>F{a
-autocmd FileType tex inoremap <buffer> `/  \frac{<++>}{<++>}<++><Esc>2F{a
+autocmd FileType tex inoremap <buffer> SEC \section{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> SSS \subsection{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> SCH \chapter{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> `6 \partial{}<++><Esc>F{a
+autocmd FileType tex inoremap <buffer> `/  \frac{}{<++>}<++><Esc>2F{a
