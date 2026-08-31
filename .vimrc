@@ -401,13 +401,14 @@ inoremap <char-34> ""<++><Left><Left><Left><Left><Left>
 inoremap <expr> <CR> CleverCR()
 
 " Skok do kolejnego znacznika <++> pod Ctrl + j w każdym pliku
-inoremap <C-j> <Esc>/<++><CR>:noh<CR>"_c4l
+""<++>inoremap <C-j> <Esc>/<++><CR>:noh<CR>"_c4l
+nnoremap <silent> <C-j> /<++><CR>:nohlsearch<CR>c4l
 
 " Szybkie środowiska LaTeXa (kompatybilne ze skokiem <C-j>)
 autocmd FileType tex inoremap <buffer> EEQ \begin{equation}<CR><++><CR>\end{equation}<CR><++><Esc>2kO
 autocmd FileType tex inoremap <buffer> EIT \begin{itemize}<CR>\item <++><CR>\end{itemize}<CR><++><Esc>2kf<i
 autocmd FileType tex inoremap <buffer> EEN \begin{enumerate}<CR>\item <++><CR>\end{enumerate}<CR><++><Esc>2kf<i
-autocmd FileType tex inoremap <buffer> EFI \begin{figure}[htbp]<CR>\centering<CR>\includegraphics[width=0.8\textwidth]{<++>}<CR>\caption{<++>}<CR>\label{fig:<++>}<CR>\end{figure}<CR><++><Esc>5kf{a
+autocmd FileType tex inoremap <buffer> EFI \begin{figure}[H]<CR>\centering<CR>\includegraphics[width=0.8\textwidth]{<++>}<CR>\caption{<++>}<CR>\label{fig:<++>}<CR>\end{figure}<CR><++><Esc>5kf{a
 
 " ---------- DODATKOWE SKRÓTY LATEX (Zamienniki dla IMAP) ----------
 autocmd FileType tex inoremap <buffer> hhh \hl{}<++><Esc>F{a
