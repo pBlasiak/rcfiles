@@ -145,32 +145,28 @@ map <leader>m :set modifiable
 
 " ---------- OTHER MAPPINGS ----------
 
-""<++>nnoremap <Leader>r :browse oldfiles<CR>
 " ---------- HISTORIA PLIKÓW (QUICKFIX) ----------
 function! ShowOldfilesQF()
   let l:list = []
   for f in v:oldfiles
-    call add(l:list, {'filename': f})
+    let l:full_path = expand(f)
+    if filereadable(l:full_path)
+      call add(l:list, {'filename': l:full_path})
+    endif
   endfor
   call setqflist(l:list)
   copen
 endfunction
 
-function! OpenQfFile()
-  let l:idx = line('.') - 1
-  if exists('v:oldfiles') && l:idx >= 0 && l:idx < len(v:oldfiles)
-    let l:file = v:oldfiles[l:idx]
-    cclose
-    execute 'edit ' . fnameescape(expand(l:file))
-  endif
-endfunction
-
 " Skrót wywołujący historię (np. Spacja + r lub \r)
 nnoremap <Leader>r :call ShowOldfilesQF()<CR>
 
-" Mapowanie Entera i dwukliku myszy w oknie Quickfix
-autocmd FileType qf nnoremap <buffer> <silent> <CR> :call OpenQfFile()<CR>
-autocmd FileType qf nnoremap <buffer> <silent> <2-LeftMouse> :call OpenQfFile()<CR>
+" Uniwersalne otwieranie i zamykanie Quickfix (dla ag, grep, oldfiles itp.)
+autocmd FileType qf nnoremap <buffer> <silent> <CR> :.cc<CR>:cclose<CR>
+autocmd FileType qf nnoremap <buffer> <silent> <2-LeftMouse> :.cc<CR>:cclose<CR>
+
+
+
 
 map E ea
 map <leader>g :Gvdiffsplit HEAD~1:%
@@ -214,7 +210,6 @@ autocmd FileType netrw setl bufhidden=wipe
 " ============================================================
 " VIMTEX
 " ============================================================
-" DODANE 30.08.2026 (nie komitowane)
 map  <F6> :wall<CR> <leader>ll <leader>lv
 
 let g:tex_flavor = 'latex'
@@ -395,6 +390,7 @@ inoremap ( ()<++><Left><Left><Left><Left><Left>
 inoremap { {}<++><Left><Left><Left><Left><Left>
 inoremap [ []<++><Left><Left><Left><Left><Left>
 inoremap < <><++><Left><Left><Left><Left><Left>
+inoremap << <<
 inoremap <char-34> ""<++><Left><Left><Left><Left><Left>
 
 " Inteligentny Enter działający w każdym pliku
